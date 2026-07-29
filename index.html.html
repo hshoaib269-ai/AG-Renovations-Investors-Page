@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Investors | A&G Renovations</title>
+<meta name="description" content="A&G Renovations' property investment strategy: buy cash, extend lease, reconfigure, refurbish, sell. Twelve years of London renovation experience, real deal case studies, and an opportunity to co-invest.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1AA25C;
+    --green-dark: #128A4B;
+    --green-pale: #E8F5EC;
+    --ink: #17191C;
+    --ink-soft: #4A4F54;
+    --mute: #6D7278;
+    --paper: #FFFFFF;
+    --paper-alt: #F5F7F6;
+    --line: #E3E7E5;
+    --amber: #B8792B;
+    --amber-pale: #FBF2E4;
+    --slate: #435363;
+    --slate-pale: #EEF1F3;
+    --shadow: 0 10px 28px rgba(23,25,28,0.08);
+    --shadow-lg: 0 16px 40px rgba(23,25,28,0.14);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink-soft);
+    background: var(--paper);
+    line-height: 1.65;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    font-size: 16px;
+  }
+
+  h1, h2, h3, h4, h5 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--ink);
+    letter-spacing: -0.3px;
+  }
+
+  a { color: var(--green); text-decoration: none; }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+    outline: 2px solid var(--green); outline-offset: 2px;
+  }
+  @media (prefers-reduced-motion: reduce) { * { transition: none !important; scroll-behavior: auto !important; } }
+
+  /* ---------- LAYOUT ---------- */
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 92px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  /* ---------- HERO ---------- */
+  .hero { padding: 84px 0 88px; border-bottom: 1px solid var(--line); background: linear-gradient(rgba(245,247,246,0.90), rgba(245,247,246,0.90)), url('images/site/hero-kitchen.jpg') center center / cover no-repeat; }
+  .eyebrow {
+    display: inline-block;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+    color: var(--green); font-weight: 700;
+    margin-bottom: 22px;
+  }
+  h1 {
+    font-size: clamp(34px, 5vw, 50px);
+    line-height: 1.14;
+    margin-bottom: 26px;
+    letter-spacing: -1px;
+    font-weight: 800;
+  }
+  h1 em { font-style: normal; color: var(--green); }
+  .lede {
+    font-size: 18px;
+    color: var(--ink-soft);
+    max-width: 660px;
+    line-height: 1.7;
+    margin-bottom: 44px;
+  }
+
+  .hero-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 30px 0;
+    margin-top: 8px;
+  }
+  @media (max-width: 720px) { .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 24px 0; } }
+  .stat { text-align: center; padding: 0 20px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: none; }
+  @media (max-width: 720px) { .stat:nth-child(2n+1) { border-left: none; } }
+  .stat .num {
+    display: block;
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 30px;
+    color: var(--green);
+    line-height: 1; margin-bottom: 8px;
+  }
+  .stat .lbl {
+    font-size: 12px; color: var(--mute);
+    letter-spacing: 0.4px;
+  }
+
+  /* ---------- SECTION HEADS ---------- */
+  h2 {
+    font-size: clamp(26px, 3.4vw, 34px);
+    line-height: 1.22;
+    margin-bottom: 18px;
+    max-width: 680px;
+    font-weight: 800;
+  }
+  h2 em { font-style: normal; color: var(--green); }
+  .section-lede {
+    font-size: 16.5px; color: var(--ink-soft);
+    max-width: 640px; margin-bottom: 52px;
+    line-height: 1.75;
+  }
+
+  /* ---------- STRATEGY LIST ---------- */
+  .strat-list { margin-top: 8px; }
+  .strat-item {
+    display: grid;
+    grid-template-columns: 46px 1fr;
+    gap: 22px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .strat-item:last-child { border-bottom: 1px solid var(--line); }
+  .strat-num {
+    width: 40px; height: 40px; border-radius: 50%;
+    background: var(--green-pale); color: var(--green-dark);
+    font-family: 'Poppins', sans-serif; font-weight: 700; font-size: 15px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .strat-body h3 {
+    font-size: 19px; margin-bottom: 8px; font-weight: 700;
+  }
+  .strat-body p {
+    font-size: 15.5px; color: var(--ink-soft); line-height: 1.65;
+  }
+
+  /* ---------- CALLOUT ---------- */
+  .callout {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    box-shadow: var(--shadow);
+    padding: 36px 40px;
+    margin-top: 36px;
+  }
+  .callout .lbl {
+    font-size: 12px; letter-spacing: 1.5px; text-transform: uppercase;
+    color: var(--green); font-weight: 700; margin-bottom: 12px;
+  }
+  .callout h3 { font-size: 21px; margin-bottom: 16px; font-weight: 700; }
+  .callout p { color: var(--ink-soft); font-size: 15.5px; line-height: 1.7; margin-bottom: 12px; }
+  .callout p:last-child { margin-bottom: 0; }
+  .callout strong { color: var(--ink); font-weight: 600; }
+
+  /* ---------- CASE STUDIES ---------- */
+  .case-filter {
+    display: flex; gap: 10px; margin-bottom: 40px;
+    flex-wrap: wrap;
+  }
+  .case-chip {
+    background: var(--paper-alt); border: 1px solid var(--line);
+    padding: 8px 18px; cursor: pointer; border-radius: 999px;
+    font-size: 13px; font-weight: 500;
+    color: var(--ink-soft); font-family: inherit;
+    transition: all 0.15s;
+  }
+  .case-chip.active { color: #fff; background: var(--green); border-color: var(--green); }
+  .case-chip:hover:not(.active) { border-color: var(--green); color: var(--green); }
+
+  .case {
+    padding: 36px;
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    margin-bottom: 28px;
+  }
+
+  .case-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    margin-bottom: 8px; flex-wrap: wrap; gap: 12px;
+  }
+  .case-title { font-size: 23px; font-weight: 700; }
+  .case-status {
+    font-size: 11px; letter-spacing: 1px; text-transform: uppercase;
+    font-weight: 700; padding: 5px 12px; border-radius: 999px;
+  }
+  .case-status.market { color: var(--green-dark); background: var(--green-pale); }
+  .case-status.progress { color: var(--amber); background: var(--amber-pale); }
+  .case-status.done { color: var(--slate); background: var(--slate-pale); }
+
+  .case-loc { color: var(--mute); font-size: 14px; margin-bottom: 22px; }
+
+  .case-body p {
+    color: var(--ink-soft); font-size: 15.5px;
+    line-height: 1.7; margin-bottom: 12px;
+  }
+  .case-body h4 {
+    font-family: 'Poppins', sans-serif;
+    font-size: 12px; letter-spacing: 1.3px; text-transform: uppercase;
+    color: var(--green-dark); font-weight: 700;
+    margin-top: 24px; margin-bottom: 12px;
+  }
+
+  .case-metrics {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0;
+    background: var(--paper-alt);
+    border-radius: 10px;
+    padding: 20px 4px;
+    margin: 22px 0;
+  }
+  @media (max-width: 720px) { .case-metrics { grid-template-columns: repeat(2, 1fr); row-gap: 18px; } }
+  .metric {
+    padding: 0 20px; border-left: 1px solid var(--line); text-align: center;
+  }
+  .metric:first-child { border-left: none; }
+  @media (max-width: 720px) { .metric:nth-child(2n+1) { border-left: none; } }
+  .metric .val {
+    display: block;
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 21px;
+    color: var(--ink); line-height: 1; margin-bottom: 6px;
+  }
+  .metric .lbl {
+    font-size: 11px; color: var(--mute);
+    letter-spacing: 0.4px;
+  }
+
+  .checks { list-style: none; padding: 0; }
+  .checks li {
+    display: flex; justify-content: space-between;
+    padding: 9px 0; border-bottom: 1px dotted var(--line);
+    font-size: 14px; color: var(--ink-soft);
+  }
+  .checks li:last-child { border-bottom: none; }
+  .checks .val { color: var(--ink); font-weight: 600; }
+  .checks .val.pass { color: var(--green-dark); }
+  .checks .val.watch { color: var(--amber); }
+
+  .case-note {
+    margin-top: 8px;
+    font-size: 14px; color: var(--mute);
+    font-style: normal;
+  }
+
+  /* ---------- WHY A&G (video full width, between the two paragraphs) ---------- */
+  .why-us-video {
+    margin: 40px 0 44px;
+  }
+  .why-us-video .video-frame {
+    position: relative; width: 100%; padding-bottom: 56.25%; height: 0;
+    overflow: hidden; border-radius: 14px; box-shadow: var(--shadow-lg);
+    background: #1B2733;
+  }
+  .why-us-video .video-frame iframe {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+  }
+  .why-us-video .caption {
+    font-size: 13px; color: var(--mute); margin-top: 12px; text-align: center;
+  }
+
+  .quals {
+    margin-top: 4px; padding: 22px 24px;
+    background: var(--green-pale);
+    border-radius: 10px;
+    border-left: 4px solid var(--green);
+  }
+  .quals p { font-size: 15px; color: var(--ink-soft); line-height: 1.65; }
+  .quals strong { color: var(--ink); font-weight: 700; }
+
+  /* ---------- WHY NOW ---------- */
+  .signals {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+  @media (max-width: 600px) { .signals { grid-template-columns: 1fr; } }
+  .signal {
+    padding: 28px 26px;
+    background: var(--paper-alt);
+    border-radius: 12px;
+  }
+  .signal .label {
+    font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: var(--green-dark); font-weight: 700; margin-bottom: 8px;
+  }
+  .signal h3 {
+    font-family: 'Poppins', sans-serif; font-size: 19px; margin-bottom: 10px; font-weight: 700;
+  }
+  .signal p { color: var(--ink-soft); font-size: 15px; line-height: 1.6; }
+
+  /* ---------- INVESTOR CTA ---------- */
+  .invest-section {
+    background: var(--paper-alt);
+  }
+  .invest-inner {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px; align-items: start;
+  }
+  @media (max-width: 720px) { .invest-inner { grid-template-columns: 1fr; gap: 40px; } }
+  .invest-copy p {
+    color: var(--ink-soft); font-size: 15.5px; line-height: 1.7; margin-bottom: 14px;
+  }
+  .invest-copy ul {
+    list-style: none; padding: 0; margin-top: 22px;
+  }
+  .invest-copy li {
+    padding: 11px 0 11px 22px;
+    border-top: 1px solid var(--line);
+    color: var(--ink-soft); font-size: 14.5px;
+    position: relative;
+  }
+  .invest-copy li:last-child { border-bottom: 1px solid var(--line); }
+  .invest-copy li::before {
+    content: '✓'; position: absolute; left: 0; top: 10px; color: var(--green); font-weight: 700;
+  }
+
+  .form-card {
+    background: var(--paper);
+    border-radius: 14px;
+    box-shadow: var(--shadow-lg);
+    padding: 38px 34px;
+  }
+  .form-card h3 { font-size: 21px; margin-bottom: 6px; font-weight: 700; }
+  .form-card .subtxt { color: var(--mute); font-size: 14px; margin-bottom: 26px; }
+  .form-row { margin-bottom: 18px; }
+  .form-row label {
+    display: block;
+    font-size: 12px; letter-spacing: 0.5px;
+    color: var(--mute); font-weight: 600; margin-bottom: 6px;
+  }
+  .form-row input, .form-row select, .form-row textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid var(--line);
+    border-radius: 7px;
+    background: var(--paper-alt);
+    font-size: 14.5px; font-family: inherit; color: var(--ink);
+    transition: border-color 0.15s;
+  }
+  .form-row select { appearance: none; }
+  .form-row input:focus, .form-row select:focus, .form-row textarea:focus {
+    outline: none; border-color: var(--green);
+  }
+  .form-check {
+    display: flex; gap: 10px; align-items: flex-start;
+    margin: 18px 0 22px;
+    font-size: 12.5px; color: var(--mute); line-height: 1.55;
+  }
+  .form-check input { margin-top: 4px; flex-shrink: 0; accent-color: var(--green); }
+  .form-submit {
+    width: 100%;
+    padding: 14px;
+    background: var(--green); color: #fff;
+    border: none; border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+    letter-spacing: 0.3px;
+    cursor: pointer;
+    transition: background 0.15s;
+    font-family: inherit;
+  }
+  .form-submit:hover { background: var(--green-dark); }
+  .form-thanks {
+    display: none;
+    padding: 20px 0 0;
+    text-align: left;
+    color: var(--ink);
+  }
+  .form-thanks strong { color: var(--green-dark); font-weight: 700; }
+  .form-thanks.show { display: block; }
+
+  /* ---------- LEGAL / CLOSING NOTE ---------- */
+  #legal-note { padding: 56px 0; border-bottom: none; }
+  .legal-note {
+    background: var(--paper-alt);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 30px 34px;
+  }
+  .legal-entity {
+    font-size: 13px; font-weight: 600; color: var(--ink); margin-bottom: 14px;
+  }
+  .legal-note p.legal-body {
+    font-size: 12.5px; color: var(--mute); line-height: 1.8; margin: 0;
+  }
+  .legal-note strong { color: var(--ink-soft); font-weight: 600; }
+</style>
+</head>
+<body>
+
+<!-- =============== HERO =============== -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Investor Overview</span>
+    <h1>Buy for cash. Add value.<br>Sell smart. <em>Repeat.</em></h1>
+    <p class="lede">
+      We acquire undervalued London and South-East apartments: short leases, repossessions,
+      probate and uninhabitable stock. We extend the lease, reconfigure the layout, and fully
+      refurbish them through our in-house renovation team. Twelve years in domestic renovation
+      backs every project. And we put our own capital in first.
+    </p>
+
+    <div class="hero-stats">
+      <div class="stat"><span class="num">£500K</span><span class="lbl">Own capital deployed</span></div>
+      <div class="stat"><span class="num">2</span><span class="lbl">Self-funded deals</span></div>
+      <div class="stat"><span class="num">100%</span><span class="lbl">Cash funded</span></div>
+      <div class="stat"><span class="num">60+</span><span class="lbl">Renovations / year</span></div>
+    </div>
+  </div>
+</header>
+
+<!-- =============== STRATEGY =============== -->
+<section id="strategy">
+  <div class="wrap">
+    <span class="eyebrow">Our Strategy</span>
+    <h2>We only buy where <em>value can be created</em>, not just paid for.</h2>
+    <p class="section-lede">
+      Every deal has at least two levers we can pull to grow value. We buy for cash to move
+      fast on the right stock, then use our own in-house renovation team to control the three
+      biggest cost drivers in a refurbishment: labour, materials, and time.
+    </p>
+
+    <div class="strat-list">
+      <div class="strat-item">
+        <div class="strat-num">1</div>
+        <div class="strat-body">
+          <h3>Acquire the right stock</h3>
+          <p>We target short-lease flats, repossessions, probate sales and uninhabitable properties, where the seller is motivated and the market is thin. Cash purchase means we move fast, close on our terms, and avoid mortgage-driven timelines.</p>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-num">2</div>
+        <div class="strat-body">
+          <h3>Extend the lease</h3>
+          <p>Where the lease is short, we extend it. A statutory 90-year extension on a flat with under 80 years remaining is often the single biggest value uplift on the deal, and one that most buyers won't or can't do.</p>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-num">3</div>
+        <div class="strat-body">
+          <h3>Reconfigure the layout</h3>
+          <p>Rooms that don't work for a modern buyer get redrawn. Two-bed conversions, dual-aspect living space, better circulation, a proper en-suite where possible: small re-planning moves that change the whole feel of a flat.</p>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-num">4</div>
+        <div class="strat-body">
+          <h3>Fully refurbish, in-house</h3>
+          <p>Bathrooms, kitchens, electrics, plumbing, decoration: all delivered by our own team. We are not a passive investor paying a builder. We <strong>are</strong> the builder. That controls cost, quality, and timeline in ways an outside investor can't replicate.</p>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-num">5</div>
+        <div class="strat-body">
+          <h3>Sell into a clean market</h3>
+          <p>We present each finished property with professional staging, agent-ready photography, and clear compliance documentation (Gas Safe, electrical, warranty). Priced against local comps to sell within 8–12 weeks.</p>
+        </div>
+      </div>
+      <div class="strat-item">
+        <div class="strat-num">6</div>
+        <div class="strat-body">
+          <h3>Recycle the capital</h3>
+          <p>Proceeds from each sale roll into the next acquisition, one deal at a time: no over-leverage, no exposure across too many concurrent projects, no compromise on the standard of the finish.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout" style="margin-top:48px;">
+      <div class="lbl">The Market Gap</div>
+      <h3>We deliberately buy where the crowd cannot follow.</h3>
+      <p>Every property we target is <strong>unmortgageable</strong> at the point of purchase: short lease, uninhabitable, in probate, or repossessed. That single fact eliminates the vast majority of our competition. First-time buyers cannot touch them, mainstream chain buyers cannot touch them, and most investors do not have the operational capability to fix them. Cash buyers with an in-house renovation team have this market largely to themselves.</p>
+      <p>Once we have extended the lease, reconfigured the layout, and fully refurbished the property, the same flat becomes fully mortgageable and move-in ready. At that point we target the largest and most active buyer segment in the UK market, <strong>first-time buyers</strong>, with a finished home priced against the local comp, a clean legal pack, and no work for them to do. We buy where competition is thin. We sell where demand is deep.</p>
+    </div>
+
+    <div class="callout" style="margin-top:28px;">
+      <div class="lbl">Skin in the Game</div>
+      <h3>Around <strong>£500,000</strong> of our own capital is already at work.</h3>
+      <p>Both current projects, 27 Cotelands and 30 Chepstow Road, have been <strong>100% cash funded from A&G Renovations' own company funds</strong>. No borrowing, no bridging, no investor money. Combined acquisition and refurbishment across the two deals sits in the region of <strong>£500,000</strong>, all of it A&G's own capital. The full risk sits with us.</p>
+      <p>Only once these two projects have sold and demonstrated the model do we intend to open co-investment on future deals. When we eventually invite investors to participate, we will continue putting our own capital into every deal alongside theirs.</p>
+      <p><strong>Property investing is full of promoters who take an arrangement fee and disappear. Our founders were renovating London homes for their own clients for over a decade before ever touching a property flip, and we still fund every deal ourselves before ever asking anyone else to come in.</strong></p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== CASE STUDIES =============== -->
+<section id="case-studies">
+  <div class="wrap">
+    <span class="eyebrow">Deal Analyses</span>
+    <h2>Every deal, <em>documented in full</em>.</h2>
+    <p class="section-lede">
+      Every property we take on is analysed to a consistent format: acquisition costs, project costs, exit costs, ARV, net profit, ROI, and independent health checks. Nothing hidden. Below are our live and recent deals.
+    </p>
+
+    <div class="case-filter">
+      <button class="case-chip active" data-filter="all">All</button>
+      <button class="case-chip" data-filter="market">On the Market</button>
+      <button class="case-chip" data-filter="progress">In Progress</button>
+      <button class="case-chip" data-filter="done">Completed</button>
+    </div>
+
+    <div class="case-grid">
+
+      <!-- Case 1: Cotelands -->
+      <article class="case" data-status="market">
+        <div class="case-head">
+          <div class="case-title">27 Cotelands</div>
+          <span class="case-status market">On the Market</span>
+        </div>
+        <div class="case-loc">Croydon, Surrey · CR0 5UD</div>
+
+        <div class="case-body">
+          <h4>Deal thesis</h4>
+          <p>Cash-acquired leasehold flat in Croydon, purchased off-market at a discount to the local comp. Bought as a full-refurb opportunity with a short lease that we extended during the works. Refurbishment completed by A&G's in-house team: bathroom, kitchen, electrics, decoration.</p>
+
+          <h4>The numbers</h4>
+          <div class="case-metrics">
+            <div class="metric"><span class="val">£274K</span><span class="lbl">All-in acquisition</span></div>
+            <div class="metric"><span class="val">£65K</span><span class="lbl">Refurb + lease</span></div>
+            <div class="metric"><span class="val">£420K</span><span class="lbl">Target sale (ARV)</span></div>
+            <div class="metric"><span class="val">£70.6K</span><span class="lbl">Net profit</span></div>
+          </div>
+
+          <h4>Health checks</h4>
+          <ul class="checks">
+            <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">16.8%</span></li>
+            <li><span>ROI on total costs</span><span class="val">20.2%</span></li>
+            <li><span>Equity created (ARV − Acquisition)</span><span class="val">£146,000</span></li>
+            <li><span>Break-even sale price</span><span class="val">£349,400</span></li>
+            <li><span>70% rule (Max Allowable Offer)</span><span class="val watch">Over MAO but still profitable</span></li>
+          </ul>
+
+          <h4>Status</h4>
+          <p>Refurbishment complete. Marketed with a local agent at £420,000, supported by comparable sales in the immediate area. Sale expected within 8–12 weeks of listing.</p>
+
+          <p style="margin-top:18px;"><a href="cotelands-case-study.html" style="font-weight:600; font-size:14.5px;">View full case study — photos, video, before/after →</a></p>
+        </div>
+      </article>
+
+      <!-- Case 2: Chepstow -->
+      <article class="case" data-status="progress">
+        <div class="case-head">
+          <div class="case-title">30 Chepstow Road</div>
+          <span class="case-status progress">In Progress · Acquiring</span>
+        </div>
+        <div class="case-loc">Croydon · CR0 5JA · with Garage 112</div>
+
+        <div class="case-body">
+          <h4>Deal thesis</h4>
+          <p>Cash purchase at auction, with a garage included in the lot. Share of freehold transfers on completion, which makes the lease extension inexpensive. Analysed across four refurbishment / ARV scenarios (£35–40K refurb × £220–240K ARV), progressing to the higher-finish, £240K ARV target.</p>
+
+          <h4>The numbers (target scenario)</h4>
+          <div class="case-metrics">
+            <div class="metric"><span class="val">£154K</span><span class="lbl">All-in acquisition</span></div>
+            <div class="metric"><span class="val">£38K</span><span class="lbl">Refurb + holding</span></div>
+            <div class="metric"><span class="val">£240K</span><span class="lbl">Target sale (ARV)</span></div>
+            <div class="metric"><span class="val">£41.2K</span><span class="lbl">Net profit</span></div>
+          </div>
+
+          <h4>Health checks</h4>
+          <ul class="checks">
+            <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">17.2%</span></li>
+            <li><span>ROI on total costs</span><span class="val">20.7%</span></li>
+            <li><span>Break-even sale price</span><span class="val">£198,800</span></li>
+            <li><span>Freehold transfer</span><span class="val watch">To confirm in writing before exchange</span></li>
+            <li><span>Asbestos survey</span><span class="val watch">Commissioned pre-refurb</span></li>
+          </ul>
+
+          <h4>Status</h4>
+          <p>Currently in legals. Share-of-freehold transfer confirmation, asbestos survey and Fire Risk Assessment scheduled ahead of completion. Refurbishment starts on the day keys are handed over.</p>
+
+          <p style="margin-top:18px;"><a href="chepstow-road-case-study.html" style="font-weight:600; font-size:14.5px;">View full case study — photos, video, before/after →</a></p>
+        </div>
+      </article>
+
+    </div>
+
+    <p class="case-note">Completed deal case studies will appear here as each project sells and settles. Every future case study will be published in this same format.</p>
+  </div>
+</section>
+
+<!-- =============== WHY A&G =============== -->
+<section id="why-us">
+  <div class="wrap">
+    <span class="eyebrow">Why A&G</span>
+    <h2>An operator, not an intermediary.</h2>
+
+    <p class="section-lede">
+      A&G is a working domestic renovation business: <strong>60 to 70 bathroom, kitchen and full-refurbishment projects a year</strong> across London. Twelve years of running that business is the foundation the property arm sits on. We know the trades, the materials, the timelines, and the cost of getting each of them wrong.
+    </p>
+    <p style="font-size:15.5px; color:var(--ink-soft); line-height:1.7; margin-bottom:0;">
+      Layered on top is a deliberate property education, made up of <strong>books, seminars, online courses and one-to-one mentorship</strong>: the syllabus of every serious UK investor, covering acquisition strategy, valuation, planning, lease extension, tax and exit.
+    </p>
+
+    <div class="why-us-video">
+      <div class="video-frame">
+        <iframe
+          src="https://www.youtube.com/embed/dxqhiYDBaDc"
+          title="A&G Renovations: Why A&G"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          loading="lazy"
+          allowfullscreen>
+        </iframe>
+      </div>
+      <p class="caption">Andrius Grisanovas on twelve years of A&G Renovations</p>
+    </div>
+
+    <div class="quals">
+      <p>Founder Andrius Grisanovas holds a degree in <strong>Business Administration</strong> and <strong>City &amp; Guilds</strong> qualifications in domestic plumbing, the UK's most recognised vocational standard.</p>
+    </div>
+  </div>
+</section>
+
+<!-- =============== WHY NOW =============== -->
+<section>
+  <div class="wrap">
+    <span class="eyebrow">Why Now</span>
+    <h2>The London market suits our model <em>right now</em>.</h2>
+    <p class="section-lede">
+      Interest rates, stagnant transaction volumes, and a growing pool of leasehold flats with short leases have combined to create motivated sellers and thin competition from buyers who lack the operational capability to fix these properties.
+    </p>
+
+    <div class="signals">
+      <div class="signal">
+        <div class="label">Signal 01</div>
+        <h3>Short-lease supply</h3>
+        <p>Rising numbers of London leasehold flats now sit under 80 years, off-limits to most mortgage lenders, but ideal for a cash buyer with lease-extension expertise.</p>
+      </div>
+      <div class="signal">
+        <div class="label">Signal 02</div>
+        <h3>Auction repossessions</h3>
+        <p>Repossessions and forced sales are trickling back into UK auctions after the rate-cycle shift, providing consistent access to below-market stock.</p>
+      </div>
+      <div class="signal">
+        <div class="label">Signal 03</div>
+        <h3>Probate backlog</h3>
+        <p>The probate backlog has left many properties inherited but unmodernised: motivated executors, dated interiors, thin bidder pools.</p>
+      </div>
+      <div class="signal">
+        <div class="label">Signal 04</div>
+        <h3>Refurb cost inflation</h3>
+        <p>Refurbishment costs have risen faster than sale prices, punishing amateur flippers, but rewarding operators who control labour and materials in-house.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- =============== INVESTOR CTA =============== -->
+<section id="invest" class="invest-section">
+  <div class="wrap">
+    <div class="invest-inner">
+      <div class="invest-copy">
+        <span class="eyebrow">Co-Invest with A&G</span>
+        <h2 style="margin-bottom:22px;">Interested in joining future deals?</h2>
+        <p>Once our first two self-funded projects sell and settle, we will be opening a small number of future deals to co-investors: a straightforward profit-share arrangement alongside A&G's own capital on every project.</p>
+        <p>We are not raising money publicly at this time and no returns are quoted here. If you would like to be invited to preview future deals when they open, please register your interest and we will be in touch privately.</p>
+        <ul>
+          <li>Same deal-analysis format on every future opportunity, before you commit.</li>
+          <li>A&G capital continues alongside investor capital on every deal.</li>
+          <li>Full documentation, downside modelling and health checks shared up front.</li>
+          <li>You choose which deals to participate in, one at a time.</li>
+        </ul>
+      </div>
+
+      <form class="form-card" id="investor-form" onsubmit="return handleInvestorForm(event)">
+        <h3>Register your interest</h3>
+        <p class="subtxt">We'll add you to our private preview list. No obligation, no marketing.</p>
+
+        <div class="form-row">
+          <label for="name">Full name</label>
+          <input id="name" name="name" type="text" required autocomplete="name">
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required autocomplete="email">
+        </div>
+        <div class="form-row">
+          <label for="phone">Phone (optional)</label>
+          <input id="phone" name="phone" type="tel" autocomplete="tel">
+        </div>
+        <div class="form-row">
+          <label for="range">Indicative interest range</label>
+          <select id="range" name="range">
+            <option value="">Prefer not to say</option>
+            <option>Exploring, no figure yet</option>
+            <option>£25K – £50K</option>
+            <option>£50K – £100K</option>
+            <option>£100K – £250K</option>
+            <option>£250K+</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="notes">Anything we should know? (optional)</label>
+          <textarea id="notes" name="notes" rows="3"></textarea>
+        </div>
+
+        <label class="form-check">
+          <input type="checkbox" required>
+          <span>I understand this is not an offer of investment. A&G Renovations will contact me privately with information about future opportunities.</span>
+        </label>
+
+        <button type="submit" class="form-submit">Register interest</button>
+
+        <div class="form-thanks" id="form-thanks">
+          <strong>Thank you.</strong> We've received your details and will be in touch when the next opportunity opens.
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- =============== LEGAL / CLOSING NOTE ===============
+     This page inherits the site's global header and footer.
+     The block below is page-specific content that only lives here.
+     It still needs to render even though the shared footer is gone. -->
+<section id="legal-note">
+  <div class="wrap">
+    <div class="legal-note">
+      <p class="legal-entity">A&G Renovations Ltd · 31 Castle Avenue, Rainham, London, RM13 7TD · VAT 378 654 151</p>
+      <p class="legal-body"><strong>Important: please read.</strong> The information on this page is provided for information purposes only. It is not an offer or invitation to invest, and does not constitute financial, tax or legal advice. Any future co-investment opportunity offered by A&G Renovations Ltd or an associated entity will be made available only to eligible investors, subject to the applicable UK regulatory framework (including, where relevant, the Financial Services and Markets Act 2000 and the Financial Promotion Order), and will be documented under separate deal-specific terms. Property values, refurbishment costs, and sale prices are estimates based on stated assumptions; actual results may vary. Past performance of A&G's renovation business is not a guarantee of the performance of any future property investment. You should consult an independent financial adviser before making any investment decision.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+  const chips = document.querySelectorAll('.case-chip');
+  const cases = document.querySelectorAll('.case');
+  chips.forEach(chip => {
+    chip.addEventListener('click', () => {
+      chips.forEach(c => c.classList.remove('active'));
+      chip.classList.add('active');
+      const filter = chip.dataset.filter;
+      cases.forEach(c => {
+        if (filter === 'all' || c.dataset.status === filter) {
+          c.style.display = '';
+        } else {
+          c.style.display = 'none';
+        }
+      });
+    });
+  });
+
+  function handleInvestorForm(e) {
+    e.preventDefault();
+    // TODO: wire up to your form provider (Formspree / HubSpot / Mailchimp / Zapier).
+    const form = document.getElementById('investor-form');
+    const thanks = document.getElementById('form-thanks');
+    Array.from(form.elements).forEach(el => {
+      if (el.type !== 'submit') el.disabled = true;
+    });
+    form.querySelector('.form-submit').style.display = 'none';
+    thanks.classList.add('show');
+    return false;
+  }
+</script>
+
+</body>
+</html>
