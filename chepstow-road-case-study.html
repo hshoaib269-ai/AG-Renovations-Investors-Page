@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>27 Cotelands, Croydon — Case Study | A&G Renovations</title>
+  <title>27 Cotelands, Croydon | Case Study | A&G Renovations</title>
   <meta name="description"
     content="Full case study: 27 Cotelands, Croydon. Cash acquisition, lease extension, full renovation, before and after photos.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -251,6 +251,99 @@
       padding: 0;
       border: none;
       background: none;
+      cursor: zoom-in;
+    }
+
+    /* ---------- LIGHTBOX ---------- */
+    .lightbox {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: rgba(15, 17, 19, 0.92);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 60px;
+    }
+
+    .lightbox.open {
+      display: flex;
+    }
+
+    .lightbox img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 6px;
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+    }
+
+    .lb-close,
+    .lb-prev,
+    .lb-next {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.14);
+      border: none;
+      color: #fff;
+      cursor: pointer;
+      border-radius: 50%;
+      width: 46px;
+      height: 46px;
+      font-size: 22px;
+      line-height: 1;
+      font-family: inherit;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+
+    .lb-close:hover,
+    .lb-prev:hover,
+    .lb-next:hover {
+      background: rgba(255, 255, 255, 0.28);
+    }
+
+    .lb-close {
+      top: 20px;
+      right: 24px;
+      font-size: 26px;
+    }
+
+    .lb-prev {
+      left: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lb-next {
+      right: 20px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .lb-counter {
+      position: absolute;
+      bottom: 22px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: rgba(255, 255, 255, 0.75);
+      font-size: 13px;
+      font-weight: 500;
+    }
+
+    @media (max-width: 640px) {
+      .lightbox {
+        padding: 20px 12px 60px;
+      }
+
+      .lb-prev {
+        left: 8px;
+      }
+
+      .lb-next {
+        right: 8px;
+      }
     }
 
     .photo-slot:has(.placeholder-txt) {
@@ -580,8 +673,7 @@
     <div class="wrap">
       <span class="eyebrow">Photos</span>
       <h2>Before, after, and the process</h2>
-      <p class="section-lede">Full photo record of the property from acquisition through to the finished refurbishment.
-      </p>
+      <p class="section-lede">The property as bought, and as finished.</p>
 
       <h3 style="font-size:19px; margin-bottom:14px;">Bathroom</h3>
       <div class="gallery-group" data-room="bathroom">
@@ -591,24 +683,23 @@
         </div>
 
         <div class="gallery-panel active" data-panel="before">
-          <div class="photo-slot"><img src="images/cotelands/before-01.jpg" alt="Bathroom wide view — before"></div>
-          <div class="photo-slot"><img src="images/cotelands/before-02.jpg" alt="Bath and toilet — before"></div>
-          <div class="photo-slot"><img src="images/cotelands/before-03.jpg" alt="Mirror and tiling — before"></div>
+          <div class="photo-slot"><img src="images/cotelands/before-01.jpg" alt="Bathroom wide view, before"></div>
+          <div class="photo-slot"><img src="images/cotelands/before-02.jpg" alt="Bath and toilet, before"></div>
+          <div class="photo-slot"><img src="images/cotelands/before-03.jpg" alt="Mirror and tiling, before"></div>
         </div>
 
         <div class="gallery-panel" data-panel="after">
-          <div class="photo-slot"><img src="images/cotelands/after-01.jpg" alt="Bathroom — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-02.jpg" alt="Bathroom tap detail — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-03.jpg" alt="Vanity and sink — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-04.jpg" alt="Bath and shower valve — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-05.jpg" alt="Shower handset detail — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-06.jpg" alt="Towel radiator and bath — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-07.jpg" alt="Rainfall shower head — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-08.jpg" alt="Thermostatic shower control — after">
+          <div class="photo-slot"><img src="images/cotelands/after-01.jpg" alt="Bathroom, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-02.jpg" alt="Bathroom tap detail, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-03.jpg" alt="Vanity and sink, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-04.jpg" alt="Bath and shower valve, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-05.jpg" alt="Shower handset detail, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-06.jpg" alt="Towel radiator and bath, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-07.jpg" alt="Rainfall shower head, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-08.jpg" alt="Thermostatic shower control, after">
           </div>
-          <div class="photo-slot"><img src="images/cotelands/after-09.jpg" alt="Bath spout and towel ring — after">
-          </div>
-          <div class="photo-slot"><img src="images/cotelands/after-10.jpg" alt="Bathroom wide view — after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-09.jpg" alt="Bath spout and towel ring, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/after-10.jpg" alt="Bathroom wide view, after"></div>
         </div>
       </div>
 
@@ -620,33 +711,33 @@
         </div>
 
         <div class="gallery-panel active" data-panel="k-before">
-          <div class="photo-slot"><img src="images/cotelands/kitchen-before-01.jpg" alt="Kitchen wide view — before">
+          <div class="photo-slot"><img src="images/cotelands/kitchen-before-01.jpg" alt="Kitchen wide view, before">
           </div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-before-02.jpg"
-              alt="Kitchen sink and window — before"></div>
+              alt="Kitchen sink and window, before"></div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-before-03.jpg"
-              alt="Kitchen units and washing machine — before"></div>
+              alt="Kitchen units and washing machine, before"></div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-before-04.jpg"
-              alt="Kitchen storage and boiler cupboard — before"></div>
+              alt="Kitchen storage and boiler cupboard, before"></div>
         </div>
 
         <div class="gallery-panel" data-panel="k-after">
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-01.jpg"
-              alt="Kitchen hob and splashback — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-02.jpg"
-              alt="Kitchen sink and window — after"></div>
+              alt="Kitchen hob and splashback, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/kitchen-after-02.jpg" alt="Kitchen sink and window, after">
+          </div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-03.jpg"
-              alt="Kitchen cabinetry and oven — after"></div>
+              alt="Kitchen cabinetry and oven, after"></div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-04.jpg"
-              alt="Kitchen corner wide view — after"></div>
+              alt="Kitchen corner wide view, after"></div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-05.jpg"
-              alt="Kitchen island and living space — after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-06.jpg" alt="Open-plan living area — after">
+              alt="Kitchen island and living space, after"></div>
+          <div class="photo-slot"><img src="images/cotelands/kitchen-after-06.jpg" alt="Open-plan living area, after">
           </div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-07.jpg"
-              alt="Kitchen corner with pendant light — after"></div>
+              alt="Kitchen corner with pendant light, after"></div>
           <div class="photo-slot"><img src="images/cotelands/kitchen-after-08.jpg"
-              alt="Kitchen island wide view — after"></div>
+              alt="Kitchen island wide view, after"></div>
         </div>
       </div>
     </div>
@@ -656,8 +747,7 @@
     <div class="wrap">
       <span class="eyebrow">Transformation</span>
       <h2>Drag to compare</h2>
-      <p class="section-lede">Headline before/after comparisons. Swap the two placeholder panels inside each slider for
-        real photos — instructions are in the code comments.</p>
+      <p class="section-lede">Drag the handle across each image to compare the room before and after.</p>
 
       <!-- BEFORE/AFTER SLIDER 1 -->
       <div class="ba-slider" data-ba>
@@ -671,7 +761,7 @@
         <span class="ba-label left">Before</span>
         <span class="ba-label right">After</span>
       </div>
-      <p class="ba-caption">Bathroom — before / after</p>
+      <p class="ba-caption">Bathroom, before and after</p>
 
       <!-- BEFORE/AFTER SLIDER 2 -->
       <div class="ba-slider" data-ba>
@@ -685,7 +775,7 @@
         <span class="ba-label left">Before</span>
         <span class="ba-label right">After</span>
       </div>
-      <p class="ba-caption">Kitchen sink — before / after</p>
+      <p class="ba-caption">Kitchen, before and after</p>
     </div>
   </section>
 
@@ -695,14 +785,14 @@
       <h2>The deal, start to finish</h2>
 
       <h4>Acquisition</h4>
-      <p>27 Cotelands was acquired off-market, for cash, at a discount to the local comparable sale price. The property
-        was purchased with a short lease, which A&G extended during the works — removing what would otherwise have been
-        the single biggest obstacle to a future mortgage buyer.</p>
+      <p>27 Cotelands was bought off-market, for cash, at a discount to comparable local sales. It came with a short
+        lease, which A&G extended during the works. That removed what would otherwise have been the single biggest
+        obstacle for a mortgage buyer.</p>
 
       <h4>Refurbishment</h4>
-      <p>Full renovation carried out by A&G's in-house team: complete bathroom refit, kitchen refit, electrical work,
-        and full decoration throughout. The same team and standards used on A&G's client renovation projects were
-        applied here — no subcontracted flip crew, no shortcuts on finish.</p>
+      <p>The renovation was carried out by A&G's own team and covered a full bathroom refit, a full kitchen refit,
+        electrical work and decoration throughout. The same people and the same standards used on A&G's client projects
+        were applied here.</p>
 
       <h4>The numbers</h4>
       <div class="case-metrics">
@@ -720,8 +810,8 @@
       </ul>
 
       <h4>Status</h4>
-      <p>Refurbishment is complete. The property is on the market with a local agent, listed at £420,000, priced against
-        comparable sales in the immediate area. Sale is expected within 8–12 weeks of listing.</p>
+      <p>The refurbishment is complete. The property is listed with a local agent at £420,000, priced against comparable
+        sales in the immediate area, with a sale expected within 8 to 12 weeks of listing.</p>
     </div>
   </section>
 
@@ -729,14 +819,14 @@
     <div class="wrap">
       <div class="cta-box">
         <h3>Want to see future deals like this one?</h3>
-        <p>Register your interest to be notified when the next opportunity opens.</p>
+        <p>Register your interest and we will be in touch when the next deal opens.</p>
         <a class="cta-btn" href="index.html#invest">Register interest →</a>
       </div>
     </div>
   </section>
 
   <script>
-    // Gallery tabs — scoped per room group so Bathroom and Kitchen tabs don't interfere
+    // Gallery tabs, scoped per room group so Bathroom and Kitchen tabs don't interfere
     document.querySelectorAll('.gallery-group').forEach(group => {
       const tabs = group.querySelectorAll('.gtab');
       const panels = group.querySelectorAll('.gallery-panel');
@@ -750,7 +840,7 @@
       });
     });
 
-    // Before/After sliders — drag the handle, updates ba-before width + handle position
+    // Before/After sliders: drag the handle, updates ba-before width + handle position
     document.querySelectorAll('[data-ba]').forEach(slider => {
       const before = slider.querySelector('.ba-before');
       const beforeInner = slider.querySelector('.ba-before-inner');
@@ -774,6 +864,59 @@
       window.addEventListener('touchend', () => dragging = false);
       window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
     });
+  </script>
+
+  <div class="lightbox" id="lightbox">
+    <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+    <button class="lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+    <img id="lb-img" src="" alt="">
+    <button class="lb-next" id="lb-next" aria-label="Next">›</button>
+    <span class="lb-counter" id="lb-counter"></span>
+  </div>
+
+  <script>
+    // Lightbox: click any gallery photo to view full size, arrows/keys to navigate
+    (function () {
+      const lb = document.getElementById('lightbox');
+      const lbImg = document.getElementById('lb-img');
+      const counter = document.getElementById('lb-counter');
+      let group = [];
+      let idx = 0;
+
+      function show(i) {
+        idx = (i + group.length) % group.length;
+        lbImg.src = group[idx].src;
+        lbImg.alt = group[idx].alt || '';
+        counter.textContent = group.length > 1 ? (idx + 1) + ' / ' + group.length : '';
+      }
+
+      document.addEventListener('click', function (e) {
+        const img = e.target.closest('.photo-slot img');
+        if (!img) return;
+        const panel = img.closest('.gallery-panel');
+        group = panel ? Array.from(panel.querySelectorAll('.photo-slot img')) : [img];
+        show(group.indexOf(img));
+        lb.classList.add('open');
+        document.body.style.overflow = 'hidden';
+      });
+
+      function close() {
+        lb.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+
+      document.getElementById('lb-close').addEventListener('click', close);
+      document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+      document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+      lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+      document.addEventListener('keydown', function (e) {
+        if (!lb.classList.contains('open')) return;
+        if (e.key === 'Escape') close();
+        if (e.key === 'ArrowLeft') show(idx - 1);
+        if (e.key === 'ArrowRight') show(idx + 1);
+      });
+    })();
   </script>
 
 </body>
