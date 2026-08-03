@@ -102,7 +102,22 @@
     .hero {
       padding: 84px 0 88px;
       border-bottom: 1px solid var(--line);
-      background: linear-gradient(rgba(245, 247, 246, 0.78), rgba(245, 247, 246, 0.78)), url('images/site/hero-kitchen.webp') center center / cover no-repeat;
+      background: url('images/site/hero-kitchen.jpg') center center / cover no-repeat;
+    }
+
+    .hero-copy {
+      background: rgba(255, 255, 255, 0.92);
+      border-radius: 16px;
+      padding: 38px 40px 34px;
+      max-width: 620px;
+      margin-bottom: 40px;
+      box-shadow: var(--shadow);
+    }
+
+    @media (max-width: 640px) {
+      .hero-copy {
+        padding: 28px 24px 24px;
+      }
     }
 
     .eyebrow {
@@ -482,6 +497,32 @@
       font-style: normal;
     }
 
+    .case-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      background: var(--green);
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: background 0.15s, transform 0.15s;
+    }
+
+    .case-btn:hover {
+      background: var(--green-dark);
+      color: #fff;
+      transform: translateX(2px);
+    }
+
+    .case-btn .arrow {
+      font-size: 16px;
+      line-height: 1;
+    }
+
     /* ---------- WHY A&G (video full width, between the two paragraphs) ---------- */
     .why-us-video {
       margin: 40px 0 44px;
@@ -774,14 +815,16 @@
   <!-- =============== HERO =============== -->
   <header class="hero">
     <div class="wrap">
-      <span class="eyebrow">Investor Overview</span>
-      <h1>Buy for cash. Add value.<br>Sell smart. <em>Repeat.</em></h1>
-      <p class="lede">
-        We buy undervalued London and South-East apartments that most buyers cannot: short leases,
-        repossessions, probate sales and uninhabitable stock. We extend the lease, reconfigure the
-        layout, and refurbish the property with our own renovation team. Twelve years of running that
-        team is what makes the model work.
-      </p>
+      <div class="hero-copy">
+        <span class="eyebrow">Investor Overview</span>
+        <h1>Buy for cash. Add value.<br>Sell smart. <em>Repeat.</em></h1>
+        <p class="lede" style="margin-bottom:0;">
+          We buy undervalued London and South-East apartments that most buyers cannot: short leases,
+          repossessions, probate sales and uninhabitable stock. We extend the lease, reconfigure the
+          layout, and refurbish the property with our own renovation team. Twelve years of running that
+          team is what makes the model work.
+        </p>
+      </div>
 
       <div class="hero-stats">
         <div class="stat"><span class="num">£500K</span><span class="lbl">Own capital deployed</span></div>
@@ -942,8 +985,7 @@
             <p>Refurbishment complete. Marketed with a local agent at £420,000, supported by comparable sales in the
               immediate area. Sale expected within 8–12 weeks of listing.</p>
 
-            <p style="margin-top:18px;"><a href="cotelands-case-study.html"
-                style="font-weight:600; font-size:14.5px;">View full case study, photos and before/after →</a></p>
+            <a class="case-btn" href="cotelands-case-study.html">View full case study <span class="arrow">→</span></a>
           </div>
         </article>
 
@@ -983,8 +1025,8 @@
             <p>Currently in legals. Share-of-freehold transfer confirmation, asbestos survey and Fire Risk Assessment
               scheduled ahead of completion. Refurbishment starts on the day keys are handed over.</p>
 
-            <p style="margin-top:18px;"><a href="chepstow-road-case-study.html"
-                style="font-weight:600; font-size:14.5px;">View full deal analysis →</a></p>
+            <a class="case-btn" href="chepstow-road-case-study.html">View full deal analysis <span
+                class="arrow">→</span></a>
           </div>
         </article>
 
