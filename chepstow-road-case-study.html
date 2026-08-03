@@ -1,924 +1,302 @@
 <!DOCTYPE html>
 <html lang="en-GB">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>27 Cotelands, Croydon | Case Study | A&G Renovations</title>
-  <meta name="description"
-    content="Full case study: 27 Cotelands, Croydon. Cash acquisition, lease extension, full renovation, before and after photos.">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
-    rel="stylesheet">
-  <style>
-    :root {
-      --green: #1AA25C;
-      --green-dark: #128A4B;
-      --green-pale: #E8F5EC;
-      --ink: #17191C;
-      --ink-soft: #4A4F54;
-      --mute: #6D7278;
-      --paper: #FFFFFF;
-      --paper-alt: #F5F7F6;
-      --line: #E3E7E5;
-      --amber: #B8792B;
-      --amber-pale: #FBF2E4;
-      --shadow: 0 10px 28px rgba(23, 25, 28, 0.08);
-      --shadow-lg: 0 16px 40px rgba(23, 25, 28, 0.14);
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-      color: var(--ink-soft);
-      background: var(--paper);
-      line-height: 1.65;
-      font-size: 16px;
-    }
-
-    h1,
-    h2,
-    h3,
-    h4 {
-      font-family: 'Poppins', sans-serif;
-      font-weight: 700;
-      color: var(--ink);
-      letter-spacing: -0.3px;
-    }
-
-    a {
-      color: var(--green);
-      text-decoration: none;
-    }
-
-    .wrap {
-      max-width: 920px;
-      margin: 0 auto;
-      padding: 0 32px;
-    }
-
-    section {
-      padding: 72px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    section:last-of-type {
-      border-bottom: none;
-    }
-
-    .back-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 13.5px;
-      font-weight: 600;
-      color: var(--mute);
-      padding: 24px 0 0;
-    }
-
-    .back-link:hover {
-      color: var(--green);
-    }
-
-    .hero {
-      padding: 20px 0 72px;
-      border-bottom: 1px solid var(--line);
-      background: linear-gradient(rgba(245, 247, 246, 0.78), rgba(245, 247, 246, 0.78)), url('images/cotelands/after-10.webp') center center / cover no-repeat;
-    }
-
-    .eyebrow {
-      display: inline-block;
-      font-size: 12px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--green);
-      font-weight: 700;
-      margin-bottom: 18px;
-    }
-
-    h1 {
-      font-size: clamp(30px, 4.6vw, 42px);
-      line-height: 1.16;
-      margin-bottom: 10px;
-      letter-spacing: -1px;
-      font-weight: 800;
-    }
-
-    .addr {
-      font-size: 16px;
-      color: var(--mute);
-      margin-bottom: 26px;
-    }
-
-    .status-badge {
-      display: inline-block;
-      font-size: 11px;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      font-weight: 700;
-      padding: 6px 14px;
-      border-radius: 999px;
-      color: var(--green-dark);
-      background: var(--green-pale);
-      margin-bottom: 30px;
-    }
-
-    .hero-stats {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      background: var(--paper);
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      box-shadow: var(--shadow);
-      padding: 26px 0;
-    }
-
-    @media (max-width: 720px) {
-      .hero-stats {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 20px 0;
-      }
-    }
-
-    .stat {
-      text-align: center;
-      padding: 0 16px;
-      border-left: 1px solid var(--line);
-    }
-
-    .stat:first-child {
-      border-left: none;
-    }
-
-    @media (max-width: 720px) {
-      .stat:nth-child(2n+1) {
-        border-left: none;
-      }
-    }
-
-    .stat .num {
-      display: block;
-      font-weight: 800;
-      font-size: 26px;
-      color: var(--green);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .stat .lbl {
-      font-size: 11.5px;
-      color: var(--mute);
-    }
-
-    h2 {
-      font-size: clamp(24px, 3vw, 30px);
-      margin-bottom: 16px;
-      font-weight: 800;
-    }
-
-    .section-lede {
-      font-size: 15.5px;
-      max-width: 640px;
-      margin-bottom: 36px;
-      line-height: 1.75;
-    }
-
-    /* GALLERY */
-    .gallery-tabs {
-      display: flex;
-      gap: 8px;
-      margin-bottom: 28px;
-      flex-wrap: wrap;
-    }
-
-    .gtab {
-      background: var(--paper-alt);
-      border: 1px solid var(--line);
-      padding: 8px 18px;
-      cursor: pointer;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 500;
-      color: var(--ink-soft);
-      font-family: inherit;
-    }
-
-    .gtab.active {
-      color: #fff;
-      background: var(--green);
-      border-color: var(--green);
-    }
-
-    .gallery-panel {
-      display: none;
-    }
-
-    .gallery-panel.active {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 14px;
-    }
-
-    @media (max-width: 640px) {
-      .gallery-panel.active {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    .photo-slot {
-      aspect-ratio: 4/3;
-      border-radius: 10px;
-      overflow: hidden;
-      background: var(--paper-alt);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-    }
-
-    .photo-slot:has(img) {
-      padding: 0;
-      border: none;
-      background: none;
-      cursor: zoom-in;
-    }
-
-    /* ---------- LIGHTBOX ---------- */
-    .lightbox {
-      position: fixed;
-      inset: 0;
-      z-index: 999;
-      background: rgba(15, 17, 19, 0.92);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 40px 60px;
-    }
-
-    .lightbox.open {
-      display: flex;
-    }
-
-    .lightbox img {
-      max-width: 100%;
-      max-height: 100%;
-      object-fit: contain;
-      border-radius: 6px;
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
-    }
-
-    .lb-close,
-    .lb-prev,
-    .lb-next {
-      position: absolute;
-      background: rgba(255, 255, 255, 0.14);
-      border: none;
-      color: #fff;
-      cursor: pointer;
-      border-radius: 50%;
-      width: 46px;
-      height: 46px;
-      font-size: 22px;
-      line-height: 1;
-      font-family: inherit;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.15s;
-    }
-
-    .lb-close:hover,
-    .lb-prev:hover,
-    .lb-next:hover {
-      background: rgba(255, 255, 255, 0.28);
-    }
-
-    .lb-close {
-      top: 20px;
-      right: 24px;
-      font-size: 26px;
-    }
-
-    .lb-prev {
-      left: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .lb-next {
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-    }
-
-    .lb-counter {
-      position: absolute;
-      bottom: 22px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: rgba(255, 255, 255, 0.75);
-      font-size: 13px;
-      font-weight: 500;
-    }
-
-    @media (max-width: 640px) {
-      .lightbox {
-        padding: 20px 12px 60px;
-      }
-
-      .lb-prev {
-        left: 8px;
-      }
-
-      .lb-next {
-        right: 8px;
-      }
-    }
-
-    .photo-slot:has(.placeholder-txt) {
-      background: repeating-linear-gradient(45deg, #EEF1EF, #EEF1EF 10px, #E6E9E7 10px, #E6E9E7 20px);
-      border: 1.5px dashed #C6CCC9;
-      padding: 12px;
-    }
-
-    .photo-slot img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-    }
-
-    .photo-slot .placeholder-txt {
-      font-size: 12px;
-      color: var(--mute);
-      font-weight: 600;
-    }
-
-    /* BEFORE/AFTER SLIDER */
-    .ba-slider {
-      position: relative;
-      width: 100%;
-      aspect-ratio: 16/10;
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: var(--shadow-lg);
-      margin-bottom: 16px;
-      user-select: none;
-    }
-
-    .ba-slider .ba-after,
-    .ba-slider .ba-before {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-weight: 700;
-      font-size: 14px;
-      color: #fff;
-      letter-spacing: 0.5px;
-    }
-
-    .ba-slider .ba-after {
-      background: linear-gradient(135deg, #1AA25C, #128A4B);
-    }
-
-    .ba-slider .ba-before {
-      background: linear-gradient(135deg, #6D7278, #4A4F54);
-      overflow: hidden;
-    }
-
-    .ba-slider .ba-before-inner {
-      position: absolute;
-      inset: 0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .ba-slider img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .ba-handle {
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 4px;
-      background: #fff;
-      left: 50%;
-      transform: translateX(-50%);
-      cursor: ew-resize;
-      box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.1);
-    }
-
-    .ba-handle::after {
-      content: '⇔';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 40px;
-      height: 40px;
-      background: #fff;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      box-shadow: var(--shadow);
-      font-size: 16px;
-      color: var(--ink);
-    }
-
-    .ba-label {
-      position: absolute;
-      top: 14px;
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      color: #fff;
-      background: rgba(0, 0, 0, 0.35);
-      padding: 5px 12px;
-      border-radius: 999px;
-    }
-
-    .ba-label.left {
-      left: 14px;
-    }
-
-    .ba-label.right {
-      right: 14px;
-    }
-
-    .ba-caption {
-      font-size: 13px;
-      color: var(--mute);
-      text-align: center;
-      margin-bottom: 40px;
-    }
-
-    /* VIDEO */
-    .video-frame {
-      position: relative;
-      width: 100%;
-      padding-bottom: 56.25%;
-      height: 0;
-      overflow: hidden;
-      border-radius: 14px;
-      box-shadow: var(--shadow-lg);
-      background: #1B2733;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .video-frame iframe {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      border: 0;
-    }
-
-    .video-frame .video-placeholder {
-      color: #B8C0C8;
-      font-size: 14px;
-      font-weight: 600;
-      text-align: center;
-      padding: 20px;
-    }
-
-    .video-caption {
-      font-size: 13px;
-      color: var(--mute);
-      margin-top: 10px;
-      text-align: center;
-    }
-
-    /* NUMBERS */
-    .case-metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      background: var(--paper-alt);
-      border-radius: 10px;
-      padding: 20px 4px;
-      margin: 8px 0 24px;
-    }
-
-    @media (max-width: 720px) {
-      .case-metrics {
-        grid-template-columns: repeat(2, 1fr);
-        row-gap: 18px;
-      }
-    }
-
-    .metric {
-      padding: 0 20px;
-      border-left: 1px solid var(--line);
-      text-align: center;
-    }
-
-    .metric:first-child {
-      border-left: none;
-    }
-
-    @media (max-width: 720px) {
-      .metric:nth-child(2n+1) {
-        border-left: none;
-      }
-    }
-
-    .metric .val {
-      display: block;
-      font-weight: 800;
-      font-size: 20px;
-      color: var(--ink);
-      line-height: 1;
-      margin-bottom: 6px;
-    }
-
-    .metric .lbl {
-      font-size: 11px;
-      color: var(--mute);
-    }
-
-    .checks {
-      list-style: none;
-      padding: 0;
-    }
-
-    .checks li {
-      display: flex;
-      justify-content: space-between;
-      padding: 9px 0;
-      border-bottom: 1px dotted var(--line);
-      font-size: 14px;
-    }
-
-    .checks li:last-child {
-      border-bottom: none;
-    }
-
-    .checks .val {
-      color: var(--ink);
-      font-weight: 600;
-    }
-
-    .checks .val.pass {
-      color: var(--green-dark);
-    }
-
-    .checks .val.watch {
-      color: var(--amber);
-    }
-
-    .narrative p {
-      font-size: 15.5px;
-      line-height: 1.75;
-      margin-bottom: 16px;
-    }
-
-    .narrative h4 {
-      font-size: 12px;
-      letter-spacing: 1.3px;
-      text-transform: uppercase;
-      color: var(--green-dark);
-      font-weight: 700;
-      margin-top: 26px;
-      margin-bottom: 10px;
-    }
-
-    .cta-box {
-      background: var(--paper-alt);
-      border-radius: 14px;
-      padding: 36px;
-      text-align: center;
-    }
-
-    .cta-box h3 {
-      font-size: 20px;
-      margin-bottom: 10px;
-    }
-
-    .cta-box p {
-      font-size: 14.5px;
-      color: var(--mute);
-      margin-bottom: 20px;
-    }
-
-    .cta-btn {
-      display: inline-block;
-      background: var(--green);
-      color: #fff;
-      padding: 13px 30px;
-      border-radius: 8px;
-      font-weight: 600;
-      font-size: 14px;
-    }
-
-    .cta-btn:hover {
-      background: var(--green-dark);
-      color: #fff;
-    }
-
-    .asset-note {
-      background: var(--amber-pale);
-      border-left: 4px solid var(--amber);
-      border-radius: 8px;
-      padding: 14px 18px;
-      font-size: 13px;
-      color: #6B4E20;
-      margin-bottom: 30px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>30 Chepstow Road, Croydon | Case Study | A&G Renovations</title>
+<meta name="description" content="Full case study: 30 Chepstow Road, Croydon. Auction cash purchase, share of freehold, lease extension, full renovation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --green: #1AA25C; --green-dark: #128A4B; --green-pale: #E8F5EC;
+    --ink: #17191C; --ink-soft: #4A4F54; --mute: #6D7278;
+    --paper: #FFFFFF; --paper-alt: #F5F7F6; --line: #E3E7E5;
+    --amber: #B8792B; --amber-pale: #FBF2E4;
+    --shadow: 0 10px 28px rgba(23,25,28,0.08);
+    --shadow-lg: 0 16px 40px rgba(23,25,28,0.14);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: var(--ink-soft); background: var(--paper); line-height: 1.65; font-size: 16px;
+  }
+  h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; font-weight: 700; color: var(--ink); letter-spacing: -0.3px; }
+  a { color: var(--green); text-decoration: none; }
+  .wrap { max-width: 920px; margin: 0 auto; padding: 0 32px; }
+  section { padding: 72px 0; border-bottom: 1px solid var(--line); }
+  section:last-of-type { border-bottom: none; }
+
+  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--mute); padding: 24px 0 0; }
+  .back-link:hover { color: var(--green); }
+
+  .hero { padding: 20px 0 72px; border-bottom: 1px solid var(--line); background: var(--paper-alt); }
+  .eyebrow { display: inline-block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); font-weight: 700; margin-bottom: 18px; }
+  h1 { font-size: clamp(30px, 4.6vw, 42px); line-height: 1.16; margin-bottom: 10px; letter-spacing: -1px; font-weight: 800; }
+  .addr { font-size: 16px; color: var(--mute); margin-bottom: 26px; }
+  .status-badge { display: inline-block; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; font-weight: 700; padding: 6px 14px; border-radius: 999px; color: var(--amber); background: var(--amber-pale); margin-bottom: 30px; }
+
+  .hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--paper); border: 1px solid var(--line); border-radius: 12px; box-shadow: var(--shadow); padding: 26px 0; }
+  @media (max-width: 720px) { .hero-stats { grid-template-columns: repeat(2, 1fr); gap: 20px 0; } }
+  .stat { text-align: center; padding: 0 16px; border-left: 1px solid var(--line); }
+  .stat:first-child { border-left: none; }
+  @media (max-width: 720px) { .stat:nth-child(2n+1) { border-left: none; } }
+  .stat .num { display: block; font-weight: 800; font-size: 26px; color: var(--green); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 11.5px; color: var(--mute); }
+
+  h2 { font-size: clamp(24px, 3vw, 30px); margin-bottom: 16px; font-weight: 800; }
+  .section-lede { font-size: 15.5px; max-width: 640px; margin-bottom: 36px; line-height: 1.75; }
+
+  .gallery-tabs { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
+  .gtab { background: var(--paper-alt); border: 1px solid var(--line); padding: 8px 18px; cursor: pointer; border-radius: 999px; font-size: 13px; font-weight: 500; color: var(--ink-soft); font-family: inherit; }
+  .gtab.active { color: #fff; background: var(--green); border-color: var(--green); }
+  .gallery-panel { display: none; }
+  .gallery-panel.active { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 640px) { .gallery-panel.active { grid-template-columns: repeat(2, 1fr); } }
+
+  .photo-slot {
+    aspect-ratio: 4/3; border-radius: 10px; overflow: hidden;
+    background: var(--paper-alt);
+    display: flex; align-items: center; justify-content: center;
+    text-align: center;
+  }
+  .photo-slot:has(img) { padding: 0; border: none; background: none; cursor: zoom-in; }
+  .photo-slot:has(.placeholder-txt) {
+    background: repeating-linear-gradient(45deg, #EEF1EF, #EEF1EF 10px, #E6E9E7 10px, #E6E9E7 20px);
+    border: 1.5px dashed #C6CCC9;
+    padding: 12px;
+  }
+
+  /* ---------- LIGHTBOX ---------- */
+  .lightbox {
+    position: fixed; inset: 0; z-index: 999;
+    background: rgba(15,17,19,0.92);
+    display: none; align-items: center; justify-content: center;
+    padding: 40px 60px;
+  }
+  .lightbox.open { display: flex; }
+  .lightbox img {
+    max-width: 100%; max-height: 100%;
+    object-fit: contain; border-radius: 6px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+  }
+  .lb-close, .lb-prev, .lb-next {
+    position: absolute; background: rgba(255,255,255,0.14);
+    border: none; color: #fff; cursor: pointer;
+    border-radius: 50%; width: 46px; height: 46px;
+    font-size: 22px; line-height: 1; font-family: inherit;
+    display: flex; align-items: center; justify-content: center;
+    transition: background 0.15s;
+  }
+  .lb-close:hover, .lb-prev:hover, .lb-next:hover { background: rgba(255,255,255,0.28); }
+  .lb-close { top: 20px; right: 24px; font-size: 26px; }
+  .lb-prev { left: 20px; top: 50%; transform: translateY(-50%); }
+  .lb-next { right: 20px; top: 50%; transform: translateY(-50%); }
+  .lb-counter {
+    position: absolute; bottom: 22px; left: 50%; transform: translateX(-50%);
+    color: rgba(255,255,255,0.75); font-size: 13px; font-weight: 500;
+  }
+  @media (max-width: 640px) {
+    .lightbox { padding: 20px 12px 60px; }
+    .lb-prev { left: 8px; } .lb-next { right: 8px; }
+  }
+  .photo-slot img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  .photo-slot .placeholder-txt { font-size: 12px; color: var(--mute); font-weight: 600; }
+
+  .ba-slider { position: relative; width: 100%; aspect-ratio: 16/10; border-radius: 14px; overflow: hidden; box-shadow: var(--shadow-lg); margin-bottom: 16px; user-select: none; }
+  .ba-slider .ba-after, .ba-slider .ba-before { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: #fff; letter-spacing: 0.5px; }
+  .ba-slider .ba-after { background: linear-gradient(135deg, #1AA25C, #128A4B); }
+  .ba-slider .ba-before { background: linear-gradient(135deg, #6D7278, #4A4F54); overflow: hidden; }
+  .ba-slider .ba-before-inner { position: absolute; inset: 0; display: flex; align-items: center; justify-content: center; }
+  .ba-slider img { width: 100%; height: 100%; object-fit: cover; }
+  .ba-handle { position: absolute; top: 0; bottom: 0; width: 4px; background: #fff; left: 50%; transform: translateX(-50%); cursor: ew-resize; box-shadow: 0 0 0 1px rgba(0,0,0,0.1); }
+  .ba-handle::after { content: '⇔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); width: 40px; height: 40px; background: #fff; border-radius: 50%; display: flex; align-items: center; justify-content: center; box-shadow: var(--shadow); font-size: 16px; color: var(--ink); }
+  .ba-label { position: absolute; top: 14px; font-size: 11px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; color: #fff; background: rgba(0,0,0,0.35); padding: 5px 12px; border-radius: 999px; }
+  .ba-label.left { left: 14px; }
+  .ba-label.right { right: 14px; }
+  .ba-caption { font-size: 13px; color: var(--mute); text-align: center; margin-bottom: 40px; }
+
+  .video-frame { position: relative; width: 100%; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 14px; box-shadow: var(--shadow-lg); background: #1B2733; display: flex; align-items: center; justify-content: center; }
+  .video-frame iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+  .video-frame .video-placeholder { color: #B8C0C8; font-size: 14px; font-weight: 600; text-align: center; padding: 20px; }
+  .video-caption { font-size: 13px; color: var(--mute); margin-top: 10px; text-align: center; }
+
+  .case-metrics { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; background: var(--paper-alt); border-radius: 10px; padding: 20px 4px; margin: 8px 0 24px; }
+  @media (max-width: 720px) { .case-metrics { grid-template-columns: repeat(2, 1fr); row-gap: 18px; } }
+  .metric { padding: 0 20px; border-left: 1px solid var(--line); text-align: center; }
+  .metric:first-child { border-left: none; }
+  @media (max-width: 720px) { .metric:nth-child(2n+1) { border-left: none; } }
+  .metric .val { display: block; font-weight: 800; font-size: 20px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
+  .metric .lbl { font-size: 11px; color: var(--mute); }
+  .checks { list-style: none; padding: 0; }
+  .checks li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px dotted var(--line); font-size: 14px; }
+  .checks li:last-child { border-bottom: none; }
+  .checks .val { color: var(--ink); font-weight: 600; }
+  .checks .val.pass { color: var(--green-dark); }
+  .checks .val.watch { color: var(--amber); }
+
+  .narrative p { font-size: 15.5px; line-height: 1.75; margin-bottom: 16px; }
+  .narrative h4 { font-size: 12px; letter-spacing: 1.3px; text-transform: uppercase; color: var(--green-dark); font-weight: 700; margin-top: 26px; margin-bottom: 10px; }
+
+  .cta-box { background: var(--paper-alt); border-radius: 14px; padding: 36px; text-align: center; }
+  .cta-box h3 { font-size: 20px; margin-bottom: 10px; }
+  .cta-box p { font-size: 14.5px; color: var(--mute); margin-bottom: 20px; }
+  .cta-btn { display: inline-block; background: var(--green); color: #fff; padding: 13px 30px; border-radius: 8px; font-weight: 600; font-size: 14px; }
+  .cta-btn:hover { background: var(--green-dark); color: #fff; }
+
+  .asset-note { background: var(--amber-pale); border-left: 4px solid var(--amber); border-radius: 8px; padding: 14px 18px; font-size: 13px; color: #6B4E20; margin-bottom: 30px; }
+</style>
 </head>
-
 <body>
 
-  <div class="wrap"><a class="back-link" href="index.html#case-studies">← Back to all deals</a></div>
+<div class="wrap"><a class="back-link" href="index.html#case-studies">← Back to all deals</a></div>
 
-  <header class="hero">
-    <div class="wrap">
-      <span class="eyebrow">Case Study</span>
-      <h1>27 Cotelands</h1>
-      <p class="addr">Croydon, London · CR0 5UD</p>
-      <span class="status-badge">On the Market</span>
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Case Study</span>
+    <h1>30 Chepstow Road</h1>
+    <p class="addr">Croydon, London · CR0 5JA · with Garage 112</p>
+    <span class="status-badge">In Progress · Acquiring</span>
 
-      <div class="hero-stats">
-        <div class="stat"><span class="num">£274K</span><span class="lbl">All-in acquisition</span></div>
-        <div class="stat"><span class="num">£65K</span><span class="lbl">Refurb + lease</span></div>
-        <div class="stat"><span class="num">£420K</span><span class="lbl">Target sale (ARV)</span></div>
-        <div class="stat"><span class="num">£70.6K</span><span class="lbl">Net profit</span></div>
-      </div>
+    <div class="hero-stats">
+      <div class="stat"><span class="num">£154K</span><span class="lbl">All-in acquisition</span></div>
+      <div class="stat"><span class="num">£38K</span><span class="lbl">Refurb + holding</span></div>
+      <div class="stat"><span class="num">£240K</span><span class="lbl">Target sale (ARV)</span></div>
+      <div class="stat"><span class="num">£41.2K</span><span class="lbl">Net profit</span></div>
     </div>
-  </header>
-
-  <section id="gallery">
-    <div class="wrap">
-      <span class="eyebrow">Photos</span>
-      <h2>Before, after, and the process</h2>
-      <p class="section-lede">The property as bought, and as finished.</p>
-
-      <h3 style="font-size:19px; margin-bottom:14px;">Bathroom</h3>
-      <div class="gallery-group" data-room="bathroom">
-        <div class="gallery-tabs">
-          <button class="gtab active" data-tab="before">Before</button>
-          <button class="gtab" data-tab="after">After</button>
-        </div>
-
-        <div class="gallery-panel active" data-panel="before">
-          <div class="photo-slot"><img src="images/cotelands/before-01.webp" alt="Bathroom wide view, before"></div>
-          <div class="photo-slot"><img src="images/cotelands/before-02.webp" alt="Bath and toilet, before"></div>
-          <div class="photo-slot"><img src="images/cotelands/before-03.webp" alt="Mirror and tiling, before"></div>
-        </div>
-
-        <div class="gallery-panel" data-panel="after">
-          <div class="photo-slot"><img src="images/cotelands/after-01.webp" alt="Bathroom, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-02.webp" alt="Bathroom tap detail, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-03.webp" alt="Vanity and sink, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-04.webp" alt="Bath and shower valve, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-05.webp" alt="Shower handset detail, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-06.webp" alt="Towel radiator and bath, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-07.webp" alt="Rainfall shower head, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-08.webp" alt="Thermostatic shower control, after">
-          </div>
-          <div class="photo-slot"><img src="images/cotelands/after-09.webp" alt="Bath spout and towel ring, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/after-10.webp" alt="Bathroom wide view, after"></div>
-        </div>
-      </div>
-
-      <h3 style="font-size:19px; margin:44px 0 14px;">Kitchen</h3>
-      <div class="gallery-group" data-room="kitchen">
-        <div class="gallery-tabs">
-          <button class="gtab active" data-tab="k-before">Before</button>
-          <button class="gtab" data-tab="k-after">After</button>
-        </div>
-
-        <div class="gallery-panel active" data-panel="k-before">
-          <div class="photo-slot"><img src="images/cotelands/kitchen-before-01.webp" alt="Kitchen wide view, before">
-          </div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-before-02.webp"
-              alt="Kitchen sink and window, before"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-before-03.webp"
-              alt="Kitchen units and washing machine, before"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-before-04.webp"
-              alt="Kitchen storage and boiler cupboard, before"></div>
-        </div>
-
-        <div class="gallery-panel" data-panel="k-after">
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-01.webp"
-              alt="Kitchen hob and splashback, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-02.webp" alt="Kitchen sink and window, after">
-          </div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-03.webp"
-              alt="Kitchen cabinetry and oven, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-04.webp"
-              alt="Kitchen corner wide view, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-05.webp"
-              alt="Kitchen island and living space, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-06.webp" alt="Open-plan living area, after">
-          </div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-07.webp"
-              alt="Kitchen corner with pendant light, after"></div>
-          <div class="photo-slot"><img src="images/cotelands/kitchen-after-08.webp"
-              alt="Kitchen island wide view, after"></div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="before-after">
-    <div class="wrap">
-      <span class="eyebrow">Transformation</span>
-      <h2>Drag to compare</h2>
-      <p class="section-lede">Drag the handle across each image to compare the room before and after.</p>
-
-      <!-- BEFORE/AFTER SLIDER 1 -->
-      <div class="ba-slider" data-ba>
-        <div class="ba-after"><img src="images/cotelands/after-01.webp" alt="Bathroom after"
-            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
-        <div class="ba-before" style="width:50%;">
-          <div class="ba-before-inner" style="width:200%;"><img src="images/cotelands/before-01.webp"
-              alt="Bathroom before" style="width:100%;height:100%;object-fit:cover;"></div>
-        </div>
-        <div class="ba-handle" style="left:50%;"></div>
-        <span class="ba-label left">Before</span>
-        <span class="ba-label right">After</span>
-      </div>
-      <p class="ba-caption">Bathroom, before and after</p>
-
-      <!-- BEFORE/AFTER SLIDER 2 -->
-      <div class="ba-slider" data-ba>
-        <div class="ba-after"><img src="images/cotelands/kitchen-after-02.webp" alt="Kitchen sink after"
-            style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;"></div>
-        <div class="ba-before" style="width:50%;">
-          <div class="ba-before-inner" style="width:200%;"><img src="images/cotelands/kitchen-before-02.webp"
-              alt="Kitchen sink before" style="width:100%;height:100%;object-fit:cover;"></div>
-        </div>
-        <div class="ba-handle" style="left:50%;"></div>
-        <span class="ba-label left">Before</span>
-        <span class="ba-label right">After</span>
-      </div>
-      <p class="ba-caption">Kitchen, before and after</p>
-    </div>
-  </section>
-
-  <section id="full-details" class="narrative">
-    <div class="wrap">
-      <span class="eyebrow">Full Details</span>
-      <h2>The deal, start to finish</h2>
-
-      <h4>Acquisition</h4>
-      <p>27 Cotelands was bought off-market, for cash, at a discount to comparable local sales. It came with a short
-        lease, which A&G extended during the works. That removed what would otherwise have been the single biggest
-        obstacle for a mortgage buyer.</p>
-
-      <h4>Refurbishment</h4>
-      <p>The renovation was carried out by A&G's own team and covered a full bathroom refit, a full kitchen refit,
-        electrical work and decoration throughout. The same people and the same standards used on A&G's client projects
-        were applied here.</p>
-
-      <h4>The numbers</h4>
-      <div class="case-metrics">
-        <div class="metric"><span class="val">£274K</span><span class="lbl">All-in acquisition</span></div>
-        <div class="metric"><span class="val">£65K</span><span class="lbl">Refurb + lease extension</span></div>
-        <div class="metric"><span class="val">£420K</span><span class="lbl">Target sale (ARV)</span></div>
-        <div class="metric"><span class="val">£70.6K</span><span class="lbl">Net profit</span></div>
-      </div>
-      <ul class="checks">
-        <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">16.8%</span></li>
-        <li><span>ROI on total costs</span><span class="val">20.2%</span></li>
-        <li><span>Equity created (ARV − Acquisition)</span><span class="val">£146,000</span></li>
-        <li><span>Break-even sale price</span><span class="val">£349,400</span></li>
-        <li><span>70% rule (Max Allowable Offer)</span><span class="val watch">Over MAO but still profitable</span></li>
-      </ul>
-
-      <h4>Status</h4>
-      <p>The refurbishment is complete. The property is listed with a local agent at £420,000, priced against comparable
-        sales in the immediate area, with a sale expected within 8 to 12 weeks of listing.</p>
-    </div>
-  </section>
-
-  <section id="cta">
-    <div class="wrap">
-      <div class="cta-box">
-        <h3>Want to see future deals like this one?</h3>
-        <p>Register your interest and we will be in touch when the next deal opens.</p>
-        <a class="cta-btn" href="index.html#invest">Register interest →</a>
-      </div>
-    </div>
-  </section>
-
-  <script>
-    // Gallery tabs, scoped per room group so Bathroom and Kitchen tabs don't interfere
-    document.querySelectorAll('.gallery-group').forEach(group => {
-      const tabs = group.querySelectorAll('.gtab');
-      const panels = group.querySelectorAll('.gallery-panel');
-      tabs.forEach(tab => {
-        tab.addEventListener('click', () => {
-          tabs.forEach(t => t.classList.remove('active'));
-          panels.forEach(p => p.classList.remove('active'));
-          tab.classList.add('active');
-          group.querySelector(`.gallery-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
-        });
-      });
-    });
-
-    // Before/After sliders: drag the handle, updates ba-before width + handle position
-    document.querySelectorAll('[data-ba]').forEach(slider => {
-      const before = slider.querySelector('.ba-before');
-      const beforeInner = slider.querySelector('.ba-before-inner');
-      const handle = slider.querySelector('.ba-handle');
-      let dragging = false;
-
-      function setPos(clientX) {
-        const rect = slider.getBoundingClientRect();
-        let pct = ((clientX - rect.left) / rect.width) * 100;
-        pct = Math.max(0, Math.min(100, pct));
-        before.style.width = pct + '%';
-        beforeInner.style.width = (10000 / pct) + '%'; // keeps inner content visually anchored
-        handle.style.left = pct + '%';
-      }
-
-      handle.addEventListener('mousedown', () => dragging = true);
-      window.addEventListener('mouseup', () => dragging = false);
-      window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
-
-      handle.addEventListener('touchstart', () => dragging = true, { passive: true });
-      window.addEventListener('touchend', () => dragging = false);
-      window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, { passive: true });
-    });
-  </script>
-
-  <div class="lightbox" id="lightbox">
-    <button class="lb-close" id="lb-close" aria-label="Close">×</button>
-    <button class="lb-prev" id="lb-prev" aria-label="Previous">‹</button>
-    <img id="lb-img" src="" alt="">
-    <button class="lb-next" id="lb-next" aria-label="Next">›</button>
-    <span class="lb-counter" id="lb-counter"></span>
   </div>
+</header>
 
-  <script>
-    // Lightbox: click any gallery photo to view full size, arrows/keys to navigate
-    (function () {
-      const lb = document.getElementById('lightbox');
-      const lbImg = document.getElementById('lb-img');
-      const counter = document.getElementById('lb-counter');
-      let group = [];
-      let idx = 0;
+<section id="full-details" class="narrative">
+  <div class="wrap">
+    <span class="eyebrow">Full Details</span>
+    <h2>The deal, start to finish</h2>
 
-      function show(i) {
-        idx = (i + group.length) % group.length;
-        lbImg.src = group[idx].src;
-        lbImg.alt = group[idx].alt || '';
-        counter.textContent = group.length > 1 ? (idx + 1) + ' / ' + group.length : '';
-      }
+    <h4>Acquisition</h4>
+    <p>30 Chepstow Road was bought at auction, for cash, with Garage 112 included in the lot. The flat is share-of-freehold, transferring on completion, which makes the lease extension considerably cheaper than a statutory extension on a purely leasehold flat.</p>
 
-      document.addEventListener('click', function (e) {
-        const img = e.target.closest('.photo-slot img');
-        if (!img) return;
-        const panel = img.closest('.gallery-panel');
-        group = panel ? Array.from(panel.querySelectorAll('.photo-slot img')) : [img];
-        show(group.indexOf(img));
-        lb.classList.add('open');
-        document.body.style.overflow = 'hidden';
-      });
+    <h4>Scenario analysis</h4>
+    <p>Four refurbishment and ARV scenarios were modelled, ranging from a £35K refurb against a £220K ARV up to a £40K refurb against a £240K ARV. A&G is progressing with the higher-finish £240K target, on the basis that the uplift in sale price outweighs the additional refurbishment spend.</p>
 
-      function close() {
-        lb.classList.remove('open');
-        document.body.style.overflow = '';
-      }
+    <h4>The numbers (target scenario)</h4>
+    <div class="case-metrics">
+      <div class="metric"><span class="val">£154K</span><span class="lbl">All-in acquisition</span></div>
+      <div class="metric"><span class="val">£38K</span><span class="lbl">Refurb + holding</span></div>
+      <div class="metric"><span class="val">£240K</span><span class="lbl">Target sale (ARV)</span></div>
+      <div class="metric"><span class="val">£41.2K</span><span class="lbl">Net profit</span></div>
+    </div>
+    <ul class="checks">
+      <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">17.2%</span></li>
+      <li><span>ROI on total costs</span><span class="val">20.7%</span></li>
+      <li><span>Break-even sale price</span><span class="val">£198,800</span></li>
+      <li><span>Freehold transfer</span><span class="val watch">To confirm in writing before exchange</span></li>
+      <li><span>Asbestos survey</span><span class="val watch">Commissioned pre-refurb</span></li>
+    </ul>
 
-      document.getElementById('lb-close').addEventListener('click', close);
-      document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
-      document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
-      lb.addEventListener('click', e => { if (e.target === lb) close(); });
+    <h4>Status</h4>
+    <p>The deal is in legals. Share-of-freehold transfer confirmation, an asbestos survey and a Fire Risk Assessment are all scheduled ahead of completion. Refurbishment begins the day keys are handed over.</p>
+  </div>
+</section>
 
-      document.addEventListener('keydown', function (e) {
-        if (!lb.classList.contains('open')) return;
-        if (e.key === 'Escape') close();
-        if (e.key === 'ArrowLeft') show(idx - 1);
-        if (e.key === 'ArrowRight') show(idx + 1);
-      });
-    })();
-  </script>
+<section id="cta">
+  <div class="wrap">
+    <div class="cta-box">
+      <h3>Want to see future deals like this one?</h3>
+      <p>Register your interest and we will be in touch when the next deal opens.</p>
+      <a class="cta-btn" href="index.html#invest">Register interest →</a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.gtab').forEach(tab => {
+    tab.addEventListener('click', () => {
+      document.querySelectorAll('.gtab').forEach(t => t.classList.remove('active'));
+      document.querySelectorAll('.gallery-panel').forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.querySelector(`.gallery-panel[data-panel="${tab.dataset.tab}"]`).classList.add('active');
+    });
+  });
+
+  document.querySelectorAll('[data-ba]').forEach(slider => {
+    const before = slider.querySelector('.ba-before');
+    const beforeInner = slider.querySelector('.ba-before-inner');
+    const handle = slider.querySelector('.ba-handle');
+    let dragging = false;
+
+    function setPos(clientX) {
+      const rect = slider.getBoundingClientRect();
+      let pct = ((clientX - rect.left) / rect.width) * 100;
+      pct = Math.max(0, Math.min(100, pct));
+      before.style.width = pct + '%';
+      beforeInner.style.width = (10000 / pct) + '%';
+      handle.style.left = pct + '%';
+    }
+
+    handle.addEventListener('mousedown', () => dragging = true);
+    window.addEventListener('mouseup', () => dragging = false);
+    window.addEventListener('mousemove', e => { if (dragging) setPos(e.clientX); });
+
+    handle.addEventListener('touchstart', () => dragging = true, {passive:true});
+    window.addEventListener('touchend', () => dragging = false);
+    window.addEventListener('touchmove', e => { if (dragging) setPos(e.touches[0].clientX); }, {passive:true});
+  });
+</script>
+
+<div class="lightbox" id="lightbox">
+  <button class="lb-close" id="lb-close" aria-label="Close">×</button>
+  <button class="lb-prev" id="lb-prev" aria-label="Previous">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-next" id="lb-next" aria-label="Next">›</button>
+  <span class="lb-counter" id="lb-counter"></span>
+</div>
+
+<script>
+  // Lightbox: click any gallery photo to view full size, arrows/keys to navigate
+  (function () {
+    const lb = document.getElementById('lightbox');
+    const lbImg = document.getElementById('lb-img');
+    const counter = document.getElementById('lb-counter');
+    let group = [];
+    let idx = 0;
+
+    function show(i) {
+      idx = (i + group.length) % group.length;
+      lbImg.src = group[idx].src;
+      lbImg.alt = group[idx].alt || '';
+      counter.textContent = group.length > 1 ? (idx + 1) + ' / ' + group.length : '';
+    }
+
+    document.addEventListener('click', function (e) {
+      const img = e.target.closest('.photo-slot img');
+      if (!img) return;
+      const panel = img.closest('.gallery-panel');
+      group = panel ? Array.from(panel.querySelectorAll('.photo-slot img')) : [img];
+      show(group.indexOf(img));
+      lb.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+
+    function close() {
+      lb.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    document.getElementById('lb-close').addEventListener('click', close);
+    document.getElementById('lb-prev').addEventListener('click', e => { e.stopPropagation(); show(idx - 1); });
+    document.getElementById('lb-next').addEventListener('click', e => { e.stopPropagation(); show(idx + 1); });
+    lb.addEventListener('click', e => { if (e.target === lb) close(); });
+
+    document.addEventListener('keydown', function (e) {
+      if (!lb.classList.contains('open')) return;
+      if (e.key === 'Escape') close();
+      if (e.key === 'ArrowLeft') show(idx - 1);
+      if (e.key === 'ArrowRight') show(idx + 1);
+    });
+  })();
+</script>
 
 </body>
-
 </html>
