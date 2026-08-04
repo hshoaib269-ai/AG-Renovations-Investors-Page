@@ -277,6 +277,76 @@
     font-size: 14px; color: var(--mute);
     font-style: normal;
   }
+  .founder {
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    padding: 34px 38px;
+    margin-top: 8px;
+  }
+  .founder-head {
+    display: flex; justify-content: space-between; align-items: flex-start;
+    gap: 20px; flex-wrap: wrap;
+    padding-bottom: 20px; margin-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .founder-identity {
+    display: flex; align-items: center; gap: 18px;
+  }
+  .founder-photo {
+    width: 78px; height: 78px; flex-shrink: 0;
+    border-radius: 50%; overflow: hidden;
+    border: 3px solid var(--green-pale);
+    background: var(--paper-alt);
+  }
+  .founder-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+  @media (max-width: 480px) {
+    .founder-identity { gap: 14px; }
+    .founder-photo { width: 62px; height: 62px; }
+  }
+  .founder-head h3 { font-size: 22px; margin-bottom: 4px; font-weight: 800; }
+  .founder-role { font-size: 14px; color: var(--mute); }
+  .linkedin-btn {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: #0A66C2; color: #fff;
+    padding: 10px 18px; border-radius: 8px;
+    font-size: 13.5px; font-weight: 600;
+    white-space: nowrap; transition: background 0.15s;
+  }
+  .linkedin-btn:hover { background: #084d92; color: #fff; }
+  .founder-bio { font-size: 15.5px; color: var(--ink-soft); line-height: 1.7; margin-bottom: 14px; }
+
+  .subhead {
+    font-size: 13px; letter-spacing: 1.6px; text-transform: uppercase;
+    color: var(--green); font-weight: 700;
+    margin: 48px 0 20px;
+  }
+  .cred-grid {
+    display: grid; grid-template-columns: 1fr 1fr;
+    gap: 1px; background: var(--line);
+    border: 1px solid var(--line); border-radius: 10px;
+    overflow: hidden; margin-top: 26px;
+  }
+  .cred-grid.company { margin-top: 0; }
+  @media (max-width: 640px) { .cred-grid { grid-template-columns: 1fr; } }
+  .cred { background: var(--paper); padding: 18px 22px; }
+  .cred-grid.company .cred { background: var(--paper-alt); }
+  .cred-label {
+    display: block; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase;
+    color: var(--green-dark); font-weight: 700; margin-bottom: 6px;
+  }
+  .cred-value { display: block; font-size: 14.5px; color: var(--ink-soft); line-height: 1.55; }
+
+  .detail-note {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 18px 22px;
+    margin: 20px 0 4px;
+  }
+  .detail-note p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+  .detail-note a { font-weight: 600; }
   .case-btn {
     display: inline-flex; align-items: center; gap: 8px;
     margin-top: 22px;
@@ -414,6 +484,15 @@
   }
   .form-thanks strong { color: var(--green-dark); font-weight: 700; }
   .form-thanks.show { display: block; }
+  .form-error {
+    display: none;
+    padding: 16px 0 0;
+    font-size: 13.5px;
+    color: #B03636;
+    line-height: 1.6;
+  }
+  .form-error.show { display: block; }
+  .form-submit:disabled { opacity: 0.6; cursor: default; }
 
   /* ---------- LEGAL / CLOSING NOTE ---------- */
   #legal-note { padding: 56px 0; border-bottom: none; }
@@ -561,22 +640,9 @@
           <h4>Deal thesis</h4>
           <p>Cash-acquired leasehold flat in Croydon, bought off-market at a discount to the local comparable. Purchased as a full-refurb opportunity with a short lease, which we extended during the works. Bathroom, kitchen, electrics and decoration all completed by A&G's own team.</p>
 
-          <h4>The numbers</h4>
-          <div class="case-metrics">
-            <div class="metric"><span class="val">£274K</span><span class="lbl">All-in acquisition</span></div>
-            <div class="metric"><span class="val">£65K</span><span class="lbl">Refurb + lease</span></div>
-            <div class="metric"><span class="val">£420K</span><span class="lbl">Target sale (ARV)</span></div>
-            <div class="metric"><span class="val">£70.6K</span><span class="lbl">Net profit</span></div>
+          <div class="detail-note">
+            <p>Full financial detail on this deal, including cost breakdown, margin analysis and downside modelling, is available on request. <a href="#invest">Register your interest</a> or contact us directly at <a href="mailto:property@ag-renovations.co.uk">property@ag-renovations.co.uk</a>.</p>
           </div>
-
-          <h4>Health checks</h4>
-          <ul class="checks">
-            <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">16.8%</span></li>
-            <li><span>ROI on total costs</span><span class="val">20.2%</span></li>
-            <li><span>Equity created (ARV − Acquisition)</span><span class="val">£146,000</span></li>
-            <li><span>Break-even sale price</span><span class="val">£349,400</span></li>
-            <li><span>70% rule (Max Allowable Offer)</span><span class="val watch">Over MAO but still profitable</span></li>
-          </ul>
 
           <h4>Status</h4>
           <p>Refurbishment complete. Marketed with a local agent at £420,000, supported by comparable sales in the immediate area. Sale expected within 8–12 weeks of listing.</p>
@@ -597,22 +663,9 @@
           <h4>Deal thesis</h4>
           <p>Cash purchase at auction with a garage included in the lot. Share of freehold transfers on completion, which keeps the lease extension inexpensive. Analysed across four refurbishment and ARV scenarios (£35–40K refurb against £220–240K ARV), progressing to the higher-finish £240K target.</p>
 
-          <h4>The numbers (target scenario)</h4>
-          <div class="case-metrics">
-            <div class="metric"><span class="val">£154K</span><span class="lbl">All-in acquisition</span></div>
-            <div class="metric"><span class="val">£38K</span><span class="lbl">Refurb + holding</span></div>
-            <div class="metric"><span class="val">£240K</span><span class="lbl">Target sale (ARV)</span></div>
-            <div class="metric"><span class="val">£41.2K</span><span class="lbl">Net profit</span></div>
+          <div class="detail-note">
+            <p>Full financial detail on this deal, including cost breakdown, margin analysis and downside modelling, is available on request. <a href="#invest">Register your interest</a> or contact us directly at <a href="mailto:property@ag-renovations.co.uk">property@ag-renovations.co.uk</a>.</p>
           </div>
-
-          <h4>Health checks</h4>
-          <ul class="checks">
-            <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">17.2%</span></li>
-            <li><span>ROI on total costs</span><span class="val">20.7%</span></li>
-            <li><span>Break-even sale price</span><span class="val">£198,800</span></li>
-            <li><span>Freehold transfer</span><span class="val watch">To confirm in writing before exchange</span></li>
-            <li><span>Asbestos survey</span><span class="val watch">Commissioned pre-refurb</span></li>
-          </ul>
 
           <h4>Status</h4>
           <p>Currently in legals. Share-of-freehold transfer confirmation, asbestos survey and Fire Risk Assessment scheduled ahead of completion. Refurbishment starts on the day keys are handed over.</p>
@@ -653,8 +706,84 @@
       <p class="caption">Andrius Grisanovas on twelve years of A&G Renovations</p>
     </div>
 
-    <div class="quals">
-      <p>Founder Andrius Grisanovas holds a degree in <strong>Business Administration</strong> and <strong>City &amp; Guilds</strong> qualifications in domestic plumbing, the UK's most recognised vocational standard.</p>
+    <div class="founder">
+      <div class="founder-head">
+        <div class="founder-identity">
+          <div class="founder-photo">
+            <img src="images/founder-pic/founder-pic.png" alt="Andrius Grisanovas, Founder and Managing Director of A&G Renovations">
+          </div>
+          <div>
+            <h3>Andrius Grisanovas</h3>
+            <p class="founder-role">Founder &amp; Managing Director, A&amp;G Renovations Ltd</p>
+          </div>
+        </div>
+        <a class="linkedin-btn" href="https://www.linkedin.com/in/andrius-grisanovas-41002761/" target="_blank" rel="noopener noreferrer">
+          <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.14 1.45-2.14 2.94v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.63-1.85 3.36-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.06 2.06 0 1 1 0-4.13 2.06 2.06 0 0 1 0 4.13zm1.78 13.02H3.55V9h3.57v11.45zM22.22 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.45c.98 0 1.78-.77 1.78-1.72V1.72C24 .77 23.2 0 22.22 0z"/></svg>
+          View LinkedIn profile
+        </a>
+      </div>
+
+      <p class="founder-bio">
+        Andrius founded A&amp;G Renovations in March 2014 after three years working as a self-employed tradesman in London, specialising in tiling before expanding into full bathroom and kitchen renovation. He started the company with limited funds and no outside investment. It now runs an in-house team of around fourteen people.
+      </p>
+      <p class="founder-bio">
+        Alongside the trade career he studied Business Administration and Management at Anglia Ruskin University, including an international business semester at DHBW Baden-Wuerttemberg in Germany. That combination of site experience and formal business training is what shaped how A&amp;G operates, and it is the same discipline applied to the property arm.
+      </p>
+
+      <div class="cred-grid">
+        <div class="cred">
+          <span class="cred-label">Education</span>
+          <span class="cred-value">BA (Hons) Business Administration &amp; Management, Anglia Ruskin University</span>
+        </div>
+        <div class="cred">
+          <span class="cred-label">International</span>
+          <span class="cred-value">International Business Programme, DHBW Baden-Wuerttemberg, Germany</span>
+        </div>
+        <div class="cred">
+          <span class="cred-label">Trade qualification</span>
+          <span class="cred-value">City &amp; Guilds Domestic Plumbing</span>
+        </div>
+        <div class="cred">
+          <span class="cred-label">Health &amp; safety</span>
+          <span class="cred-value">Asbestos Awareness, Category A</span>
+        </div>
+      </div>
+    </div>
+
+    <h3 class="subhead">Company credentials</h3>
+    <div class="cred-grid company">
+      <div class="cred">
+        <span class="cred-label">Established</span>
+        <span class="cred-value">A&amp;G Renovations Ltd, incorporated March 2014. Twelve years trading.</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Track record</span>
+        <span class="cred-value">60 to 70 complete bathroom, kitchen and refurbishment projects a year across Greater London</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Team</span>
+        <span class="cred-value">In-house team of approximately fourteen, covering estimating, installation and project coordination</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Accreditation</span>
+        <span class="cred-value">Member of BIFIS, the British Institute of Furniture and Installation Specialists</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Insurance</span>
+        <span class="cred-value">£5 million Public Liability Insurance</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Guarantee</span>
+        <span class="cred-value">12-month labour guarantee on all completed work</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Client reviews</span>
+        <span class="cred-value">Excellent rating on Google, 4.6 on Trustpilot, 40+ verified reviews</span>
+      </div>
+      <div class="cred">
+        <span class="cred-label">Compliance</span>
+        <span class="cred-value">Licensed waste carrier. Gas Safe registered engineers and qualified electricians on all notifiable work.</span>
+      </div>
     </div>
   </div>
 </section>
@@ -711,6 +840,42 @@
       </div>
 
       <form class="form-card" id="investor-form" onsubmit="return handleInvestorForm(event)">
+        <!-- Web3Forms configuration.
+             REPLACE the access_key below with the key generated for property@ag-renovations.co.uk
+             at https://web3forms.com (enter that address, key arrives by email).
+             The current key routes to sales@ and will send investor enquiries to the wrong inbox. -->
+        <input type="hidden" name="access_key" value="REPLACE_WITH_PROPERTY_INBOX_KEY">
+        <input type="hidden" name="subject" value="New investor interest registration - A&G Property">
+        <input type="hidden" name="from_name" value="A&G Renovations Investor Page">
+        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
+
+        <!-- Automatic confirmation email sent to the person who submitted -->
+        <input type="hidden" name="replyto" value="property@ag-renovations.co.uk">
+        <input type="hidden" name="autoresponder_subject" value="Thank you for registering your interest - A&G Renovations">
+        <input type="hidden" name="autoresponder_message" value="Thank you for registering your interest in A&G Renovations' property investment projects.
+
+We have received your details and added you to our private preview list. There is no obligation at this stage and we will not add you to any marketing list.
+
+What happens next:
+
+We are currently completing our first two self-funded projects, 27 Cotelands and 30 Chepstow Road, both in Croydon. Both have been funded entirely from A&G Renovations' own company funds, with no borrowing and no investor money. Once these have sold and settled, we will be opening a small number of future deals to co-investors.
+
+When a suitable opportunity becomes available, we will contact you privately with the full deal analysis before anything is committed. That includes acquisition and project costs, the exit assumptions, downside modelling, and the health checks we apply to every purchase.
+
+If you would like the full financial detail on either of our current projects in the meantime, simply reply to this email and we will send it across.
+
+A&G Renovations Ltd has been renovating homes across London since March 2014, completing 60 to 70 complete bathroom, kitchen and refurbishment projects a year with an in-house team. We hold £5 million Public Liability Insurance and are members of BIFIS.
+
+Kind regards,
+
+Andrius Grisanovas
+Managing Director, A&G Renovations Ltd
+property@ag-renovations.co.uk
+020 3621 8527
+www.ag-renovations.co.uk
+
+This email is for information only. It is not an offer or invitation to invest and does not constitute financial advice.">
+
         <h3>Register your interest</h3>
         <p class="subtxt">We'll add you to our private preview list. No obligation, no marketing.</p>
 
@@ -750,7 +915,10 @@
         <button type="submit" class="form-submit">Register interest</button>
 
         <div class="form-thanks" id="form-thanks">
-          <strong>Thank you.</strong> We've received your details and will be in touch when the next opportunity opens.
+          <strong>Thank you.</strong> Your details have been received and a confirmation email is on its way. We will be in touch privately when the next opportunity opens.
+        </div>
+        <div class="form-error" id="form-error">
+          Something went wrong sending your details. Please email us directly at <a href="mailto:property@ag-renovations.co.uk">property@ag-renovations.co.uk</a>.
         </div>
       </form>
     </div>
@@ -790,14 +958,39 @@
 
   function handleInvestorForm(e) {
     e.preventDefault();
-    // TODO: wire up to your form provider (Formspree / HubSpot / Mailchimp / Zapier).
     const form = document.getElementById('investor-form');
     const thanks = document.getElementById('form-thanks');
-    Array.from(form.elements).forEach(el => {
-      if (el.type !== 'submit') el.disabled = true;
+    const errorBox = document.getElementById('form-error');
+    const btn = form.querySelector('.form-submit');
+
+    errorBox.classList.remove('show');
+    btn.disabled = true;
+    btn.textContent = 'Sending...';
+
+    fetch('https://api.web3forms.com/submit', {
+      method: 'POST',
+      body: new FormData(form)
+    })
+    .then(function (res) { return res.json(); })
+    .then(function (data) {
+      if (data.success) {
+        Array.from(form.elements).forEach(function (el) {
+          if (el.type !== 'submit') el.disabled = true;
+        });
+        btn.style.display = 'none';
+        thanks.classList.add('show');
+      } else {
+        btn.disabled = false;
+        btn.textContent = 'Register interest';
+        errorBox.classList.add('show');
+      }
+    })
+    .catch(function () {
+      btn.disabled = false;
+      btn.textContent = 'Register interest';
+      errorBox.classList.add('show');
     });
-    form.querySelector('.form-submit').style.display = 'none';
-    thanks.classList.add('show');
+
     return false;
   }
 </script>
