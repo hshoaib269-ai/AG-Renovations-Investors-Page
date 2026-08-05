@@ -234,6 +234,17 @@
   @media (max-width: 720px) { .metric:nth-child(2n+1) { border-left: none; } }
   .metric .val { display: block; font-weight: 800; font-size: 20px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
   .metric .lbl { font-size: 11px; color: var(--mute); }
+  .listing-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 18px;
+    background: var(--paper); color: var(--ink);
+    border: 1.5px solid var(--line);
+    padding: 12px 22px; border-radius: 8px;
+    font-size: 14px; font-weight: 600;
+    transition: border-color 0.15s, color 0.15s;
+  }
+  .listing-link:hover { border-color: var(--green); color: var(--green); }
+
   .detail-note {
     background: var(--green-pale);
     border-left: 4px solid var(--green);
@@ -433,6 +444,10 @@
 
     <h4>Status</h4>
     <p>The refurbishment is complete. The property is listed with a local agent at £420,000, priced against comparable sales in the immediate area, with a sale expected within 8 to 12 weeks of listing.</p>
+
+    <a class="listing-link" href="https://www.rightmove.co.uk/properties/89528109#/?channel=RES_BUY" target="_blank" rel="noopener noreferrer">
+      View the live listing on Rightmove <span aria-hidden="true">↗</span>
+    </a>
   </div>
 </section>
 
