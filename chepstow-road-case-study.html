@@ -2,6 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="UTF-8">
+<meta name="robots" content="noindex, nofollow">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>30 Chepstow Road, Croydon | Case Study | A&G Renovations</title>
 <meta name="description" content="Full case study: 30 Chepstow Road, Croydon. Auction cash purchase, share of freehold, lease extension, full renovation.">
@@ -29,8 +30,84 @@
   section { padding: 72px 0; border-bottom: 1px solid var(--line); }
   section:last-of-type { border-bottom: none; }
 
-  .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13.5px; font-weight: 600; color: var(--mute); padding: 24px 0 0; }
-  .back-link:hover { color: var(--green); }
+  /* ---------- SITE HEADER ---------- */
+  .site-header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(255,255,255,0.97);
+    border-bottom: 1px solid var(--line);
+    backdrop-filter: blur(8px);
+  }
+  .site-header .wrap {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 24px; padding-top: 16px; padding-bottom: 16px;
+  }
+  .brand { display: flex; align-items: baseline; gap: 10px; text-decoration: none; }
+  .brand-name {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 19px; color: var(--ink); letter-spacing: -0.4px;
+  }
+  .brand-tag {
+    font-size: 11px; color: var(--mute); font-weight: 500;
+    letter-spacing: 0.3px;
+  }
+  @media (max-width: 720px) { .brand-tag { display: none; } }
+  .site-nav { display: flex; align-items: center; gap: 26px; }
+  .site-nav a {
+    font-size: 14px; font-weight: 500; color: var(--ink-soft);
+    transition: color 0.15s;
+  }
+  .site-nav a:hover { color: var(--green); }
+  .site-nav .nav-cta {
+    background: var(--green); color: #fff;
+    padding: 9px 20px; border-radius: 7px;
+    font-weight: 600; font-size: 13.5px;
+  }
+  .site-nav .nav-cta:hover { background: var(--green-dark); color: #fff; }
+  @media (max-width: 640px) {
+    .site-nav { gap: 14px; }
+    .site-nav a:not(.nav-cta) { display: none; }
+  }
+
+  /* ---------- SITE FOOTER ---------- */
+  .site-footer {
+    background: var(--ink);
+    color: rgba(255,255,255,0.72);
+    padding: 52px 0 28px;
+    margin-top: 0;
+  }
+  .footer-grid {
+    display: grid; grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 40px; padding-bottom: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.12);
+  }
+  @media (max-width: 720px) { .footer-grid { grid-template-columns: 1fr; gap: 30px; } }
+  .footer-brand-name {
+    font-family: 'Poppins', sans-serif; font-weight: 800;
+    font-size: 18px; color: #fff; margin-bottom: 10px; letter-spacing: -0.3px;
+  }
+  .footer-blurb { font-size: 14px; line-height: 1.7; max-width: 340px; }
+  .footer-col h4 {
+    font-size: 11px; letter-spacing: 1.4px; text-transform: uppercase;
+    color: rgba(255,255,255,0.5); font-weight: 700; margin-bottom: 14px;
+  }
+  .footer-col a, .footer-col p {
+    display: block; font-size: 14px; color: rgba(255,255,255,0.72);
+    margin-bottom: 9px; line-height: 1.5;
+  }
+  .footer-col a:hover { color: #fff; }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+    gap: 16px; flex-wrap: wrap; padding-top: 22px;
+    font-size: 12.5px; color: rgba(255,255,255,0.5);
+  }
+
+  /* ---------- CASE CARD PHOTO ---------- */
+  .case-photo {
+    width: 100%; aspect-ratio: 16/9;
+    border-radius: 10px; overflow: hidden;
+    margin-bottom: 22px;
+  }
+  .case-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
 
   .hero { padding: 20px 0 72px; border-bottom: 1px solid var(--line); background: var(--paper-alt); }
   .eyebrow { display: inline-block; font-size: 12px; letter-spacing: 2px; text-transform: uppercase; color: var(--green); font-weight: 700; margin-bottom: 18px; }
@@ -130,6 +207,15 @@
   @media (max-width: 720px) { .metric:nth-child(2n+1) { border-left: none; } }
   .metric .val { display: block; font-weight: 800; font-size: 20px; color: var(--ink); line-height: 1; margin-bottom: 6px; }
   .metric .lbl { font-size: 11px; color: var(--mute); }
+  .detail-note {
+    background: var(--green-pale);
+    border-left: 4px solid var(--green);
+    border-radius: 8px;
+    padding: 20px 24px;
+    margin: 24px 0 8px;
+  }
+  .detail-note p { font-size: 14.5px; color: var(--ink-soft); line-height: 1.65; margin: 0; }
+  .detail-note a { font-weight: 600; }
   .checks { list-style: none; padding: 0; }
   .checks li { display: flex; justify-content: space-between; padding: 9px 0; border-bottom: 1px dotted var(--line); font-size: 14px; }
   .checks li:last-child { border-bottom: none; }
@@ -151,7 +237,20 @@
 </head>
 <body>
 
-<div class="wrap"><a class="back-link" href="index.html#case-studies">← Back to all deals</a></div>
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html">
+      <span class="brand-name">A&amp;G Renovations</span>
+      <span class="brand-tag">Property Investment</span>
+    </a>
+    <nav class="site-nav">
+      <a href="index.html#strategy">Strategy</a>
+      <a href="index.html#case-studies">Deals</a>
+      <a href="index.html#why-us">About</a>
+      <a class="nav-cta" href="index.html#invest">Register interest</a>
+    </nav>
+  </div>
+</header>
 
 <header class="hero">
   <div class="wrap">
@@ -180,20 +279,9 @@
     <h4>Scenario analysis</h4>
     <p>Four refurbishment and ARV scenarios were modelled, ranging from a £35K refurb against a £220K ARV up to a £40K refurb against a £240K ARV. A&G is progressing with the higher-finish £240K target, on the basis that the uplift in sale price outweighs the additional refurbishment spend.</p>
 
-    <h4>The numbers (target scenario)</h4>
-    <div class="case-metrics">
-      <div class="metric"><span class="val">£154K</span><span class="lbl">All-in acquisition</span></div>
-      <div class="metric"><span class="val">£38K</span><span class="lbl">Refurb + holding</span></div>
-      <div class="metric"><span class="val">£240K</span><span class="lbl">Target sale (ARV)</span></div>
-      <div class="metric"><span class="val">£41.2K</span><span class="lbl">Net profit</span></div>
+    <div class="detail-note">
+      <p>Full financial detail on this deal, including the cost breakdown, margin analysis, downside modelling and the health checks applied to every A&G acquisition, is available on request. <a href="index.html#invest">Register your interest</a> or contact us directly at <a href="mailto:property@ag-renovations.co.uk">property@ag-renovations.co.uk</a>.</p>
     </div>
-    <ul class="checks">
-      <li><span>Margin on ARV (target ≥15%)</span><span class="val pass">17.2%</span></li>
-      <li><span>ROI on total costs</span><span class="val">20.7%</span></li>
-      <li><span>Break-even sale price</span><span class="val">£198,800</span></li>
-      <li><span>Freehold transfer</span><span class="val watch">To confirm in writing before exchange</span></li>
-      <li><span>Asbestos survey</span><span class="val watch">Commissioned pre-refurb</span></li>
-    </ul>
 
     <h4>Status</h4>
     <p>The deal is in legals. Share-of-freehold transfer confirmation, an asbestos survey and a Fire Risk Assessment are all scheduled ahead of completion. Refurbishment begins the day keys are handed over.</p>
@@ -209,6 +297,45 @@
     </div>
   </div>
 </section>
+
+
+<section id="legal-note" style="padding:44px 0; border-bottom:none;">
+  <div class="wrap">
+    <div style="background:var(--paper-alt); border:1px solid var(--line); border-radius:12px; padding:26px 30px;">
+      <p style="font-size:13px; font-weight:600; color:var(--ink); margin-bottom:12px;">A&amp;G Renovations Ltd &middot; VAT 378 654 151</p>
+      <p style="font-size:12.5px; color:var(--mute); line-height:1.8; margin:0;"><strong style="color:var(--ink-soft);">Important: please read.</strong> The information on this page is provided for information purposes only. It is not an offer or invitation to invest, and does not constitute financial, tax or legal advice. Any future co-investment opportunity offered by A&amp;G Renovations Ltd or an associated entity will be made available only to eligible investors, subject to the applicable UK regulatory framework, and will be documented under separate deal-specific terms. Property values, refurbishment costs and sale prices are estimates based on stated assumptions; actual results may vary. Past performance of A&amp;G's renovation business is not a guarantee of the performance of any future property investment. You should consult an independent financial adviser before making any investment decision.</p>
+    </div>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-brand-name">A&amp;G Renovations Ltd</div>
+        <p class="footer-blurb">Renovating homes across Greater London since 2014. Our property arm acquires, refurbishes and sells undervalued London apartments, funded from our own capital.</p>
+      </div>
+      <div class="footer-col">
+        <h4>This page</h4>
+        <a href="index.html#strategy">Our strategy</a>
+        <a href="index.html#case-studies">Deal analyses</a>
+        <a href="index.html#why-us">About A&amp;G</a>
+        <a href="index.html#invest">Register interest</a>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:property@ag-renovations.co.uk">property@ag-renovations.co.uk</a>
+        <a href="tel:02036218527">020 3621 8527</a>
+        <a href="https://www.ag-renovations.co.uk" target="_blank" rel="noopener noreferrer">www.ag-renovations.co.uk</a>
+        <a href="https://www.linkedin.com/in/andrius-grisanovas-41002761/" target="_blank" rel="noopener noreferrer">Andrius Grisanovas on LinkedIn</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 A&amp;G Renovations Ltd. Registered in England &amp; Wales. VAT 378 654 151.</span>
+      <span>12-month labour guarantee &middot; £5m Public Liability Insurance &middot; BIFIS member</span>
+    </div>
+  </div>
+</footer>
 
 <script>
   document.querySelectorAll('.gtab').forEach(tab => {
