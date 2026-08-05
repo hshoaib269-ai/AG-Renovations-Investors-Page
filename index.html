@@ -840,41 +840,14 @@
       </div>
 
       <form class="form-card" id="investor-form" onsubmit="return handleInvestorForm(event)">
-        <!-- Web3Forms configuration.
-             REPLACE the access_key below with the key generated for property@ag-renovations.co.uk
-             at https://web3forms.com (enter that address, key arrives by email).
-             The current key routes to sales@ and will send investor enquiries to the wrong inbox. -->
-        <input type="hidden" name="access_key" value="REPLACE_WITH_PROPERTY_INBOX_KEY">
-        <input type="hidden" name="subject" value="New investor interest registration - A&G Property">
-        <input type="hidden" name="from_name" value="A&G Renovations Investor Page">
-        <input type="checkbox" name="botcheck" style="display:none" tabindex="-1" autocomplete="off">
-
-        <!-- Automatic confirmation email sent to the person who submitted -->
-        <input type="hidden" name="replyto" value="property@ag-renovations.co.uk">
-        <input type="hidden" name="autoresponder_subject" value="Thank you for registering your interest - A&G Renovations">
-        <input type="hidden" name="autoresponder_message" value="Thank you for registering your interest in A&G Renovations' property investment projects.
-
-We have received your details and added you to our private preview list. There is no obligation at this stage and we will not add you to any marketing list.
-
-What happens next:
-
-We are currently completing our first two self-funded projects, 27 Cotelands and 30 Chepstow Road, both in Croydon. Both have been funded entirely from A&G Renovations' own company funds, with no borrowing and no investor money. Once these have sold and settled, we will be opening a small number of future deals to co-investors.
-
-When a suitable opportunity becomes available, we will contact you privately with the full deal analysis before anything is committed. That includes acquisition and project costs, the exit assumptions, downside modelling, and the health checks we apply to every purchase.
-
-If you would like the full financial detail on either of our current projects in the meantime, simply reply to this email and we will send it across.
-
-A&G Renovations Ltd has been renovating homes across London since March 2014, completing 60 to 70 complete bathroom, kitchen and refurbishment projects a year with an in-house team. We hold £5 million Public Liability Insurance and are members of BIFIS.
-
-Kind regards,
-
-Andrius Grisanovas
-Managing Director, A&G Renovations Ltd
-property@ag-renovations.co.uk
-020 3621 8527
-www.ag-renovations.co.uk
-
-This email is for information only. It is not an offer or invitation to invest and does not constitute financial advice.">
+        <!-- Submits to Zapier webhook. Set the URL in ZAPIER_WEBHOOK below.
+             Zap actions required, in this order:
+               1. Webhooks by Zapier (Catch Hook)  - receives the submission
+               2. Email by Zapier / Gmail          - notification to property@ag-renovations.co.uk
+               3. Email by Zapier / Gmail          - confirmation to {{email}} from the form -->
+        <input type="hidden" name="lead_source" value="Investor Page">
+        <input type="hidden" name="project_type" value="Property Investment">
+        <input type="text" name="website" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
 
         <h3>Register your interest</h3>
         <p class="subtxt">We'll add you to our private preview list. No obligation, no marketing.</p>
@@ -956,6 +929,9 @@ This email is for information only. It is not an offer or invitation to invest a
     });
   });
 
+  // Zapier webhook endpoint. Replace with the Catch Hook URL from the investor Zap.
+  const ZAPIER_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/27822859/46ipntu/';
+
   function handleInvestorForm(e) {
     e.preventDefault();
     const form = document.getElementById('investor-form');
@@ -963,27 +939,34 @@ This email is for information only. It is not an offer or invitation to invest a
     const errorBox = document.getElementById('form-error');
     const btn = form.querySelector('.form-submit');
 
+    // Honeypot: silently succeed if the hidden field was filled by a bot
+    if (form.website && form.website.value) { return false; }
+
     errorBox.classList.remove('show');
     btn.disabled = true;
     btn.textContent = 'Sending...';
 
-    fetch('https://api.web3forms.com/submit', {
+    const data = new URLSearchParams();
+    data.append('name', form.name.value);
+    data.append('email', form.email.value);
+    data.append('phone', form.phone.value);
+    data.append('range', form.range.value);
+    data.append('notes', form.notes.value);
+    data.append('lead_source', 'Investor Page');
+    data.append('project_type', 'Property Investment');
+    data.append('submitted_at', new Date().toISOString());
+    data.append('page_url', window.location.href);
+
+    fetch(ZAPIER_WEBHOOK, {
       method: 'POST',
-      body: new FormData(form)
+      body: data
     })
-    .then(function (res) { return res.json(); })
-    .then(function (data) {
-      if (data.success) {
-        Array.from(form.elements).forEach(function (el) {
-          if (el.type !== 'submit') el.disabled = true;
-        });
-        btn.style.display = 'none';
-        thanks.classList.add('show');
-      } else {
-        btn.disabled = false;
-        btn.textContent = 'Register interest';
-        errorBox.classList.add('show');
-      }
+    .then(function () {
+      Array.from(form.elements).forEach(function (el) {
+        if (el.type !== 'submit') el.disabled = true;
+      });
+      btn.style.display = 'none';
+      thanks.classList.add('show');
     })
     .catch(function () {
       btn.disabled = false;
